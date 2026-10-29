@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boys' Brigade Nigeria — Anambra State Council</title>
+<meta name="description" content="The Boys' Brigade Nigeria, Anambra State Council — Sure & Steadfast. Raising disciplined, God-fearing, self-reliant boys and young men.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-deep:#071527;
+    --navy-mid:#132B4D;
+    --red:#A81F2D;
+    --red-deep:#7E1520;
+    --gold:#C9A227;
+    --gold-soft:#E4C767;
+    --cream:#F6F1E7;
+    --paper:#FBF8F2;
+    --charcoal:#1B1B1B;
+    --ink-soft:#4A4640;
+    --line:#E4DCC8;
+    --radius:2px;
+    --shadow: 0 12px 30px -12px rgba(7,21,39,.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'Source Sans 3', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    margin:0 0 .5em;
+    letter-spacing:-0.01em;
+    line-height:1.08;
+    color:var(--navy);
+  }
+  p{line-height:1.65; color:var(--ink-soft); margin:0 0 1em;}
+  a{color:inherit; text-decoration:none;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--red);
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px; height:1px;
+    background:var(--red);
+    display:inline-block;
+  }
+  img{max-width:100%; display:block;}
+  button{font-family:inherit; cursor:pointer;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- layout helpers ---------- */
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .page{display:none;}
+  .page.active{display:block; animation: fadeIn .4s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  section{padding:72px 0;}
+  section.tight{padding:48px 0;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:.5em;
+    padding:14px 26px;
+    font-weight:600;
+    font-size:.95rem;
+    border-radius:var(--radius);
+    border:1.5px solid transparent;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-gold{background:var(--gold); color:var(--navy-deep);}
+  .btn-gold:hover{background:var(--gold-soft);}
+  .btn-outline{border-color:rgba(246,241,231,.5); color:var(--cream);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold-soft);}
+  .btn-navy{background:var(--navy); color:var(--cream);}
+  .btn-navy:hover{background:var(--navy-mid);}
+  .btn-red{background:var(--red); color:var(--cream);}
+  .btn-red:hover{background:var(--red-deep);}
+
+  /* ---------- crest / signature element ---------- */
+  .crest{display:block;}
+  .crest .ring{fill:none; stroke:var(--gold); stroke-width:2;}
+  .crest .field{fill:var(--navy);}
+  .crest .anchor{stroke:var(--cream); stroke-width:3.4; fill:none; stroke-linecap:round; stroke-linejoin:round;}
+  .crest .cross{stroke:var(--gold-soft); stroke-width:2.6; stroke-linecap:round;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    max-width:1120px; margin:0 auto;
+    gap:20px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-text{line-height:1.15;}
+  .brand-text .name{
+    font-family:'Fraunces', serif;
+    color:var(--cream);
+    font-weight:700;
+    font-size:1.02rem;
+  }
+  .brand-text .sub{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--gold-soft);
+    font-size:.66rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  nav.primary-nav{display:flex; align-items:center; gap:2px;}
+  nav.primary-nav > .nav-link, .more-trigger{
+    color:var(--cream);
+    font-weight:600;
+    font-size:.88rem;
+    padding:10px 14px;
+    border-radius:var(--radius);
+    background:transparent;
+    border:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  nav.primary-nav > .nav-link:hover, .more-trigger:hover{color:var(--gold-soft);}
+  nav.primary-nav > .nav-link.current{color:var(--gold);}
+  .more-wrap{position:relative;}
+  .more-menu{
+    position:absolute; right:0; top:calc(100% + 8px);
+    background:var(--paper);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    border-radius:var(--radius);
+    min-width:210px;
+    padding:8px;
+    display:none;
+    flex-direction:column;
+  }
+  .more-wrap.open .more-menu{display:flex;}
+  .more-menu a{
+    padding:10px 12px;
+    font-size:.9rem;
+    font-weight:600;
+    color:var(--navy);
+    border-radius:var(--radius);
+    display:flex; align-items:center; gap:8px;
+  }
+  .more-menu a:hover{background:var(--cream); color:var(--red);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--cream);}
+  .menu-toggle svg{width:26px; height:26px;}
+
+  @media (max-width:920px){
+    nav.primary-nav{
+      position:fixed; inset:64px 0 0 0;
+      background:var(--navy-deep);
+      flex-direction:column;
+      align-items:stretch;
+      padding:16px;
+      transform:translateX(100%);
+      transition:transform .3s ease;
+      overflow-y:auto;
+    }
+    nav.primary-nav.open{transform:translateX(0);}
+    nav.primary-nav > .nav-link, .more-trigger{
+      padding:16px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:1rem;
+      justify-content:space-between;
+    }
+    .more-wrap{width:100%;}
+    .more-menu{position:static; box-shadow:none; width:100%; margin-top:4px; background:rgba(255,255,255,.04); border:none;}
+    .more-menu a{color:var(--cream);}
+    .more-menu a:hover{background:rgba(255,255,255,.08); color:var(--gold-soft);}
+    .menu-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(120% 140% at 85% -10%, rgba(201,162,39,.18), transparent 55%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream);
+    padding:96px 0 80px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 64px);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.25fr .9fr; gap:56px; align-items:center;
+  }
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(2.4rem, 5vw, 4rem);
+    font-weight:700;
+  }
+  .hero h1 em{color:var(--gold-soft); font-style:normal;}
+  .hero-lede{color:rgba(246,241,231,.82); font-size:1.08rem; max-width:46ch;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;}
+  .hero-crest-wrap{display:flex; justify-content:center;}
+  .placeholder-note{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    color:rgba(246,241,231,.5);
+    margin-top:10px;
+    text-align:center;
+  }
+
+  .stat-strip{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:64px; padding-top:32px;
+    position:relative; z-index:1;
+  }
+  .stat-strip div{border-left:1px solid rgba(255,255,255,.12); padding-left:12px;}
+  .stat-strip div:first-child{border-left:none; padding-left:12px;}
+  .stat-num{font-family:'Fraunces', serif; font-size:2.1rem; color:var(--gold-soft); font-weight:700;}
+  .stat-label{font-family:'JetBrains Mono', monospace; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(246,241,231,.65);}
+
+  @media (max-width:840px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-crest-wrap{order:-1;}
+    .stat-strip{grid-template-columns:repeat(2,1fr); row-gap:24px;}
+    .stat-strip div:nth-child(2n+1){border-left:none;}
+  }
+
+  /* ---------- section heading ---------- */
+  .section-head{max-width:640px; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+
+  .band-dark{background:var(--navy); color:var(--cream);}
+  .band-dark h2, .band-dark h3, .band-dark h4{color:var(--cream);}
+  .band-dark p{color:rgba(246,241,231,.78);}
+  .band-cream{background:var(--cream);}
+
+  /* ---------- roster / age groups (genuine sequence) ---------- */
+  .roster{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .roster-card{background:var(--paper); padding:28px 24px;}
+  .roster-chip{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem; font-weight:600; letter-spacing:.08em;
+    color:var(--red); border:1px solid var(--red); border-radius:100px;
+    padding:4px 10px; display:inline-block; margin-bottom:14px;
+  }
+  .roster-card h3{font-size:1.15rem; margin-bottom:.3em;}
+  .roster-age{font-family:'JetBrains Mono', monospace; font-size:.78rem; color:var(--ink-soft); margin-bottom:12px; display:block;}
+  @media (max-width:900px){.roster{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.roster{grid-template-columns:1fr;}}
+
+  /* ---------- object / motto plaques ---------- */
+  .plaque-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .plaque{
+    border:1px solid var(--line); background:var(--paper);
+    padding:32px; position:relative;
+  }
+  .plaque::before{
+    content:"";
+    position:absolute; top:0; left:0; width:44px; height:3px; background:var(--gold);
+  }
+  .plaque blockquote{font-family:'Fraunces', serif; font-size:1.2rem; color:var(--navy); margin:0 0 12px; line-height:1.4;}
+  .plaque cite{font-style:normal; font-family:'JetBrains Mono', monospace; font-size:.72rem; color:var(--red); letter-spacing:.05em;}
+  @media (max-width:760px){.plaque-grid{grid-template-columns:1fr;}}
+
+  /* ---------- cards (programmes/library/articles) ---------- */
+  .card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.card-grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:26px;
+    display:flex; flex-direction:column; gap:10px;
+    transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .card:hover{box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--gold);}
+  .card-icon{
+    width:44px; height:44px; border-radius:50%;
+    background:var(--navy); color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700;
+  }
+  .card h3{font-size:1.08rem;}
+  .card .tag{font-family:'JetBrains Mono', monospace; font-size:.68rem; color:var(--red); letter-spacing:.06em; text-transform:uppercase;}
+
+  /* ---------- training pathway (genuine sequence) ---------- */
+  .pathway{display:flex; flex-wrap:wrap; gap:0; counter-reset:step;}
+  .pathway-step{
+    flex:1 1 180px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:22px 20px;
+    position:relative;
+  }
+  .pathway-step + .pathway-step{border-left:none;}
+  .pathway-step .num{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--gold-soft);
+    background:var(--navy);
+    width:30px; height:30px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:.8rem; font-weight:600;
+    margin-bottom:12px;
+  }
+  .pathway-step h4{font-size:.98rem; margin-bottom:4px;}
+  .pathway-step p{font-size:.86rem; margin:0;}
+  @media (max-width:900px){
+    .pathway-step{flex:1 1 45%; border-left:1px solid var(--line) !important; border-top:none;}
+    .pathway-step:nth-child(1),.pathway-step:nth-child(2){border-top:1px solid var(--line);}
+  }
+  @media (max-width:560px){.pathway-step{flex:1 1 100%; border-left:1px solid var(--line) !important; border-top:1px solid var(--line) !important;}}
+
+  table.schedule{width:100%; border-collapse:collapse; margin-top:8px;}
+  table.schedule th, table.schedule td{
+    text-align:left; padding:14px 16px; border-bottom:1px solid var(--line); font-size:.92rem;
+  }
+  table.schedule th{
+    font-family:'JetBrains Mono', monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--red); border-bottom:2px solid var(--navy);
+  }
+
+  /* ---------- forms ---------- */
+  .form-shell{
+    background:var(--paper); border:1px solid var(--line); padding:32px;
+    max-width:640px;
+  }
+  .field{margin-bottom:20px;}
+  .field label{
+    display:block; font-family:'JetBrains Mono', monospace; font-size:.72rem;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--navy); margin-bottom:8px; font-weight:600;
+  }
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border:1.5px solid var(--line); background:#fff;
+    font-family:'Source Sans 3', sans-serif; font-size:.95rem; border-radius:var(--radius); color:var(--charcoal);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--gold); outline:none;}
+  .field textarea{min-height:130px; resize:vertical;}
+  .radio-row{display:flex; gap:18px; flex-wrap:wrap;}
+  .radio-row label{
+    display:flex; align-items:center; gap:8px; font-family:'Source Sans 3',sans-serif;
+    text-transform:none; letter-spacing:0; font-size:.92rem; font-weight:400; color:var(--charcoal);
+  }
+  .radio-row input{width:auto;}
+  .form-note{font-size:.82rem; color:var(--ink-soft); margin-top:6px;}
+  .confirm-box{
+    display:none; background:var(--navy); color:var(--cream); padding:26px; border-left:4px solid var(--gold);
+  }
+  .confirm-box.show{display:block;}
+  .confirm-box h3{color:var(--gold-soft);}
+
+  /* ---------- quiz ---------- */
+  .quiz-shell{
+    background:var(--navy); color:var(--cream);
+    padding:40px; border:1px solid rgba(201,162,39,.3);
+  }
+  .quiz-progress{
+    font-family:'JetBrains Mono', monospace; font-size:.72rem; color:var(--gold-soft);
+    letter-spacing:.08em; text-transform:uppercase; margin-bottom:18px;
+  }
+  .quiz-track{height:4px; background:rgba(255,255,255,.15); margin-bottom:28px;}
+  .quiz-track-fill{height:100%; background:var(--gold); width:0%; transition:width .3s ease;}
+  .quiz-question h3{color:var(--cream); font-size:1.4rem; margin-bottom:22px;}
+  .quiz-options{display:flex; flex-direction:column; gap:10px;}
+  .quiz-opt{
+    text-align:left; background:rgba(255,255,255,.05); border:1.5px solid rgba(255,255,255,.15);
+    color:var(--cream); padding:14px 18px; border-radius:var(--radius); font-size:.96rem;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .quiz-opt:hover{border-color:var(--gold-soft);}
+  .quiz-opt.correct{background:rgba(76,175,80,.25); border-color:#4caf50;}
+  .quiz-opt.incorrect{background:rgba(168,31,45,.35); border-color:var(--red);}
+  .quiz-opt[disabled]{cursor:default;}
+  .quiz-result{text-align:center;}
+  .quiz-result .score{font-family:'Fraunces', serif; font-size:3.2rem; color:var(--gold-soft); font-weight:700;}
+
+/* ---------- digital library ---------- */
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.library-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 26px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  min-width: 0;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.library-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.library-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  background: var(--navy);
+  color: var(--gold-soft);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.library-card h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.library-card p {
+  font-size: .94rem;
+  margin-bottom: 22px;
+}
+
+.library-card .btn {
+  margin-top: auto;
+  padding: 12px 18px;
+  font-size: .88rem;
+}
+
+.library-note {
+  margin-top: 28px;
+  font-size: .85rem;
+}
+
+@media (max-width: 900px) {
+  .library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .library-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .library-card {
+    padding: 22px;
+  }
+}
+
+
+
+  /* ---------- articles ---------- */
+  .article{border-bottom:1px solid var(--line); padding:28px 0;}
+  .article:first-child{border-top:1px solid var(--line);}
+  .article-date{font-family:'JetBrains Mono', monospace; font-size:.72rem; color:var(--red); letter-spacing:.05em; text-transform:uppercase;}
+  .article-body{display:none; margin-top:14px;}
+  .article-body.open{display:block;}
+  .read-more{font-family:'JetBrains Mono', monospace; font-size:.78rem; color:var(--navy); font-weight:600; border-bottom:1px solid var(--navy); padding-bottom:1px;}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .contact-info-row{display:flex; gap:14px; margin-bottom:22px;}
+  .contact-info-row .ic{
+    width:38px; height:38px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-info-row h4{font-size:.95rem; margin-bottom:2px;}
+  .contact-info-row p{margin:0; font-size:.92rem;}
+  .map-frame{border:1px solid var(--line); width:100%; height:260px; margin-top:8px;}
+  @media (max-width:840px){.contact-grid{grid-template-columns:1fr;}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-deep); color:rgba(246,241,231,.7); padding:56px 0 28px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px;}
+  .footer-grid h4{color:var(--gold-soft); font-family:'JetBrains Mono', monospace; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:16px;}
+  .footer-grid a, .footer-grid p{display:block; font-size:.88rem; color:rgba(246,241,231,.68); margin-bottom:10px;}
+  .footer-grid a:hover{color:var(--gold-soft);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.8rem;}
+  .footer-motto{font-family:'Fraunces', serif; color:var(--gold-soft); font-style:italic;}
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;}}
+
+  .divider-crest{display:flex; justify-content:center; margin:8px 0 48px;}
+
+  ::selection{background:var(--gold); color:var(--navy-deep);}
+
+  .published-articles{display:grid;gap:0}
+  .published-articles .article{padding:1.4rem 0;border-bottom:1px solid rgba(128,128,128,.25)}
+  .published-articles .article h3{margin:.45rem 0 .6rem}
+  .published-articles .article-excerpt{margin:.5rem 0 1rem;line-height:1.75}
+  .published-articles .article-full{display:none;line-height:1.85;white-space:normal}
+  .published-articles .article-full.open{display:block}
+  .published-articles .article-full p{margin:.7rem 0}
+  .published-articles .article-full h2,.published-articles .article-full h3{margin:1.2rem 0 .5rem}
+  .article-empty{color:#6b6b6b;padding:1.25rem 0}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GQFDMSVQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GQFDMSVQD');
+</script>
+
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="header-inner">
+    <a href="#home" class="brand" onclick="goTo('home')">
+      <img src="bb.png" alt="Boys' Anambra Brigade logo" style="width:42px; height:42px; border-radius:50%;">
+      <span class="brand-text">
+        <span class="name">The Boys' Brigade Nigeria</span><br>
+        <span class="sub">Anambra State Council</span>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav">
+      <a class="nav-link" data-page="home" onclick="goTo('home')">Home</a>
+      <a class="nav-link" data-page="about" onclick="goTo('about')">About Us</a>
+      <a class="nav-link" data-page="programmes" onclick="goTo('programmes')">Programmes</a>
+      <a class="nav-link" data-page="training" onclick="goTo('training')">Training</a>
+      <a class="nav-link" data-page="contact" onclick="goTo('contact')">Contact Us</a>
+      <div class="more-wrap" id="moreWrap">
+        <button class="more-trigger" id="moreTrigger">More
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="more-menu">
+          <a data-page="library" onclick="goTo('library')"> Library</a>
+          <a data-page="quiz" onclick="goTo('quiz')"> Quiz</a>
+          <a data-page="anonymous" onclick="goTo('anonymous')"> Anonymous Box</a>
+          <a data-page="articles" onclick="goTo('articles')"> Articles</a>
+          <a data-page="recognition" onclick="goTo('recognition')"> Recognition</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="page active" id="page-home">
+  <div class="wrap" style="padding-top:18px"><div id="firebase-announcements" aria-live="polite"></div></div>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Anambra State Council</span>
+          <h1>Sure &amp; <em>Steadfast.</em></h1>
+          <p class="hero-lede">The Boys' Brigade Nigeria, Anambra State Council journeys with boys and young men from the age of 6 and above, mentoring them in discipline, faith, and service, in partnership with churches across the state.</p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-gold" onclick="goTo('programmes');return false;">What We Do</a>
+            <a href="#" class="btn btn-outline" onclick="goTo('about');return false;">Who We Are</a>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-num" id="public-stat-companies">500+</div>
+    <div class="stat-label">Companies in Council</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" id="public-stat-officers">150+</div>
+    <div class="stat-label">Registered Officers</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" id="public-stat-trained">70+</div>
+    <div class="stat-label">Trained Officers</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" id="public-stat-councils">12</div>
+    <div class="stat-label">Battalion/Group Councils Inaugurated</div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band-cream">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The Sections</span>
+        <h2>One Boy, One journey, One Drill.</h2>
+        <p>Every boy who joins, finds himself in any of the five sections of the Boys' Brigade Nigeria, each shaped for his age and stage of growth.</p>
+      </div>
+      <div class="roster">
+        <div class="roster-card">
+          <span class="roster-chip">SECTION I</span>
+          <h3>Anchor Boys'</h3>
+          <span class="roster-age">Ages 6 – 8</span>
+          <p>Play, Bible stories and first friendships — the earliest introduction to Brigade life.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">SECTION II</span>
+          <h3>Junior Boys'</h3>
+          <span class="roster-age">Ages 9 – 11</span>
+          <p>Games, badge work and the first taste of camp — building confidence and teamwork.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">SECTION III</span>
+          <h3>Company Boys'</h3>
+          <span class="roster-age">Ages 12 – 14</span>
+          <p>Drill, service projects and the Brigade's Award Scheme begin in earnest.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">SECTION IV</span>
+          <h3>Senior Boys'</h3>
+          <span class="roster-age">Ages 15 – 18</span>
+          <p>Boys plan their own programme and work toward the Brigade's highest honours.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">SECTION V</span>
+          <h3>Officers</h3>
+          <span class="roster-age">Ages 19+</span>
+          <p>Teach, lead and mentor younger members of the Brigade.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">SECTION VI</span>
+          <h3>Patrons</h3>
+          <span class="roster-age"></span>
+          <p>Serve as high-profile sponsors and advocates who provide spiritual guidance, financial support, and public representation to advance the Boys' Brigade mission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark tight">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <div>
+        <span class="eyebrow">Have something to report or Give/Support Anonymously?</span>
+        <h2 style="margin-bottom:0;">The Anonymous Box is always open.</h2>
+        <h2 style="margin-bottom:0;">No Emergency Messages !!!.</h2>
+        <h5 style="margin-bottom:0;">"Not only the action, but also the purpose, must be good." — Aristotle</h5>
+      </div>
+      <a href="#" class="btn btn-gold" onclick="goTo('anonymous');return false;">Send a Message</a>
+    </div>
+  </section>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="page" id="page-about">
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">About Us</span>
+        <h2>Who we are</h2>
+      </div>
+      <div style="max-width:760px;">
+        <!-- ABOUT THE BOYS' BRIGADE SECTION -->
+<!-- OUR HISTORY SECTION -->
+<div class="bb-about-container" style="text-align: left; line-height: 1.8;">
+
+  <h2 style="margin-bottom: 1.5rem;">Our History</h2>
+
+  <!-- PART 1: THE BIRTH OF THE BOYS' BRIGADE -->
+  <section style="margin-bottom: 2.5rem;">
+
+    <img
+      src="al.png"
+      alt="Sir William Alexander Smith, founder of The Boys' Brigade"
+      style="display: block; width: 100%; max-width: 200px; height: auto;
+      object-fit: cover; border-radius: 12px; margin: 0 0 1.5rem 0;"
+    >
+
+    <h3 style="margin-bottom: 1rem;">
+      The Birth of The Boys' Brigade — Scotland, 1883
+    </h3>
+
+    <p style="margin-bottom: 1rem;">
+      The Boys' Brigade was found by Sir Alexander Williams Smith. He was born in Glasgow, Scotland in October 27th, 1854.William A. Smith was an Army Officer before the lord called him for his work; he abandoned his military service and became a Sunday school Teacher at Free Church mission, Northwood side hall in Glasgow Scotland. It was found during the time parents left their children uncared for. Therefore children became wild, undisciplined and were not properly thought with the Bible, hence as an enthusiastic Sunday school Teacher, he discovered what was going on and applied his military knowledge forming what is called BOYS BRIGADE in order to see that children hears the word of God. Though this Boys Brigade organization started with 51 boys but due to some of the disobedience that attracts discipline actions for corrections which many of our companies are facing today made some of the boys ran away due to the hard (harsh) training in Brigade. So they remained only 31 boys including Sir William A. Smith and these were the people that made it to the first ever enrollment service in the Boys' Brigade. boys' Brigade started with 28 boys and 3 officers on 4th October 1883 at Northwood side hall Free Church mission Glasgow, Scotland. It was known as the 1st Glasgow Company in Scotland. The name of the 3 officers are John B. Hill, James R. Hill and Sir William A. Smith. The remaining 28 boys were shared into 3 sections: Junior Boys', Company Boys' and Senior Boys' . The Boys Brigade is the first Christian uniformed organization formed in the world.   Sir William A. Smith became a knight in the year 1909. He died on 10th May 1914 at the age of 60 years after the work that God gave him to do.
+    </p>
+
+    <p>
+      What began with a single company grew into an international Christian
+      youth movement. Its enduring motto, <strong>"Sure &amp; Steadfast,"</strong>
+      reflects the commitment to faith, discipline and steadfastness that
+      has guided generations of members.
+    </p>
+
+  </section>
+
+  <!-- PART 2: BOYS' BRIGADE NIGERIA -->
+  <section style="margin-bottom: 2.5rem;">
+
+    <img
+      src="bib.png"
+      alt="The Boys' Brigade Nigeria"
+      style="display: block; width: 100%; max-width: 200px; height: auto;
+      object-fit: cover; border-radius: 12px; margin: 0 0 1.5rem 0;"
+    >
+
+    <h3 style="margin-bottom: 1rem;">
+      The Arrival and Growth of Boys' Brigade Nigeria
+    </h3>
+
+    <p style="margin-bottom: 1rem;">
+      The Boys' Brigade was introduced into Nigeria in 1908, with its
+      earliest documented beginnings at Holy Trinity Anglican Church,
+      Ebute Ero, Lagos. A. W. Wakeman, working with the church's leadership,
+      helped establish the first company, beginning a journey that would
+      spread the movement beyond its initial location.
+    </p>
+
+    <p style="margin-bottom: 1rem;">
+      As the organization expanded, the need for coordinated leadership
+      and administration became increasingly important. In 1961, a historic
+      meeting in Ilorin helped advance the formation of a unified national
+      council. Subsequent organizational steps established the foundation
+      for The Boys' Brigade Nigeria as a nationally coordinated movement.
+    </p>
+
+    <p>
+      Today, the Nigerian movement continues the founding vision through
+      Christian education, drill, training, leadership development,
+      fellowship and service to communities.
+    </p>
+    <p style="margin-bottom: 1rem;">
+      As part of The Boys' Brigade Nigeria, the Anambra State Council
+      contributes to the continued growth and development of the Brigade
+      through its companies, officers, battalions and other council
+      structures across the state.
+    </p>
+
+    <p style="margin-bottom: 1rem;">
+      Through weekly company meetings, Boys' Brigade Week, training
+      programmes, Founder's Day celebrations, camps, enrollment services,
+      leadership programmes and competitions, the Council provides
+      opportunities for members to strengthen their Christian faith,
+      develop discipline, acquire knowledge and grow in leadership
+      and service.
+    </p>
+
+    <p>
+      The Council remains committed to preserving the founding vision
+      of the Brigade, supporting its officers, nurturing its members
+      and preparing future generations to uphold the values of
+      The Boys' Brigade.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-weight: bold; font-style: italic;">
+    "The Vision of our founders shall not die in our hands."
+    <p>
+      Every Company in the Council belongs to a local church, and every activity — from Sunday parade to summer camp — is led by trained volunteer officers who give their time freely so that the next generation can grow in faith, character, and skill.
+    </p>
+
+  <!-- 4-SQUARE PROGRAM FRAMEWORK -->
+  <div class="four-square-section" style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.5rem; margin-top: 1.5rem;">
+    
+    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--red, #610202);">
+      The 4-Square Program Framework
+    </h3>
+    
+    <p style="margin-bottom: 1.5rem; font-style: italic; opacity: 0.9;">
+      Based on Luke 2:52 <em>("And Jesus increased in wisdom and stature, and in favour with God and man")</em>, the 4-Square program is a holistic training model designed to help young people grow balanced and well-rounded in body, mind, and spirit.
+    </p>
+    <h5 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+    The Boys' Brigade seeks to develop the whole boy through four complementary areas of growth: Spiritual, Physical, Educational and Social. These programmes combine Christian education and discipline with practical, enjoyable and purposeful activities. Officers are encouraged to plan balanced programmes that reflect the interests, abilities and developmental needs of their boys, helping every member grow in faith, knowledge, character and service.
+    </h5>
+   
+    <!-- 4 CARDS GRID -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+      
+<!-- SPIRITUAL -->
+<di>
+  <h4 style="margin-bottom: 0.3rem;">Spiritual</h4>
+  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; display: block; margin-bottom: 0.5rem;">
+    "In favour with God"
+  </span>
+  <p style="font-size: 0.875rem; margin: 0;">
+    Building a personal relationship with Jesus Christ through Bible study,
+    Bible stories, prayer, devotions, worship and Bible quiz competitions.
+    Spiritual programmes should go beyond teaching alone by engaging boys
+    through meaningful, enjoyable and interactive activities that help them
+    understand God's Word, apply Christian values in everyday life, and grow
+    into responsible individuals who positively influence their families
+    and communities.
+  </p>
+</div>
+
+<P>
+  
+</P>
+<!-- PHYSICAL -->
+<div>
+  <h4 style="margin-bottom: 0.3rem;">Physical</h4>
+  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; display: block; margin-bottom: 0.5rem;">
+    "In stature"
+  </span>
+  <p style="font-size: 0.875rem; margin: 0;">
+    Developing fitness, self-discipline, confidence, teamwork and a spirit
+    of comradeship through drill, football, volleyball, gymnastics, road
+    walks, martial arts and other suitable physical activities. Drill
+    encourages alertness, obedience, coordination and smartness, while
+    outdoor activities help boys improve their fitness, posture, endurance
+    and ability to work together. Activities should be age-appropriate,
+    inclusive and safely supervised.
+  </p>
+</div>
+
+<P>
+  
+</P>
+<!-- EDUCATIONAL -->
+<div>
+  <h4 style="margin-bottom: 0.3rem;">Educational</h4>
+  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; display: block; margin-bottom: 0.5rem;">
+    "In wisdom"
+  </span>
+  <p style="font-size: 0.875rem; margin: 0;">
+    Broadening each boy's knowledge, interests, talents and aspirations
+    through spelling and dictation, debates, quizzes, career talks,
+    excursions, arts and crafts, practical skills and achievement badge
+    activities. These programmes stimulate curiosity, strengthen learning
+    beyond the classroom and help boys discover their abilities, set
+    meaningful goals and prepare for future education, careers and
+    responsible adulthood. Officers should plan activities according to
+    the needs of their boys and the Company's annual programme.
+  </p>
+</div>
+
+<P>
+
+</P>
+<!-- SOCIAL / SERVICE -->
+<div>
+  <h4 style="margin-bottom: 0.3rem;">Social (Community)</h4>
+  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; display: block; margin-bottom: 0.5rem;">
+    "In favour with man"
+  </span>
+  <p style="font-size: 0.875rem; margin: 0;">
+    Nurturing good morals, citizenship, cooperation, respect and a sense
+    of responsibility towards others. Through drama, excursions, debates,
+    team activities, citizenship education and community service, boys
+    learn to communicate effectively, work with others and contribute
+    positively to society. Activities may include environmental clean-ups,
+    charitable initiatives, church service and appropriate community
+    safety-awareness projects, helping boys put Christian values into
+    practical action.
+  </p>
+</div>
+
+    </div>
+  </div>
+ 
+
+</div>
+<p> </p>
+<div class="history-block" style="margin-bottom: 2rem; text-align: left;">
+  <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Brief History</h3>
+  
+  <p style="margin-bottom: 1rem; line-height: 1.6;">
+    Following the creation of Anambra State in August 1991, the Anambra State Council was officially inaugurated on <strong>Sunday, May 9, 1993</strong> at All Saints Cathedral, Onitsha. The inauguration service was performed by National Secretary Rev. Canon Nanyak and presided over by Rt. Rev. Dr. Jonathan Onyemelukwe, Bishop on the Niger.
+  </p>
+
+  <p style="margin-bottom: 1rem; line-height: 1.6;">
+    <strong>Leadership Succession:</strong>
+  </p>
+  
+  <ul style="padding-left: 1.25rem; margin-bottom: 1rem; line-height: 1.6;">
+    <li><strong>1st President:</strong> HRH Igwe P. C. Ezenwa (Eze Okpoko of Oba)</li>
+    <li><strong>2nd President:</strong> Hon. Justice Sir C. E. K. Anagbogu</li>
+    <li><strong>3rd President:</strong> Sir Ben Osaka, SAN</li>
+    <li><strong>4th President(present):</strong> Ven. Jason Onyekagbusi</li>
+  </ul>
+</div>
+
+<!-- INAUGURATION DATES TABLE -->
+<div class="battalions-block" style="margin-bottom: 2rem; text-align: left;">
+  <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Battalion & Group Council Inaugurations</h3>
+  
+  <table style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+        <th style="padding: 8px 0;">Council</th>
+        <th style="padding: 8px 0;">Inauguration Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Onitsha Battalion Council</td><td style="padding: 8px 0;">November 25, 1972</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Awka Battalion Council</td><td style="padding: 8px 0;">May 23, 1998</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Nnewi Battalion Council</td><td style="padding: 8px 0;">September 12, 1999</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Aguata Battalion Council</td><td style="padding: 8px 0;">April 30, 2011</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Nkpor Battalion Council</td><td style="padding: 8px 0;">October 11, 2014</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Amichi Battalion Council</td><td style="padding: 8px 0;">May 20, 2017</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Ogbaru Battalion Council</td><td style="padding: 8px 0;">April 11, 2021</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Ogidi Group Council</td><td style="padding: 8px 0;">October 16, 2022</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Awada Battalion Council</td><td style="padding: 8px 0;">June 29, 2025</td></tr>
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 0;">Niger East Battalion Council</td><td style="padding: 8px 0;">December 30, 2025</td></tr>
+    </tbody>
+  </table>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-cream tight">
+    <div class="wrap">
+      <div class="plaque-grid">
+        <div class="plaque">
+          <span class="eyebrow" style="margin-bottom:14px; display:inline-flex;">Our Object</span>
+          <blockquote>"The advancement of Christ's Kingdom among Boys, and the promotion of habits of Obedience, Reverence, Discipline, Self-respect, and all that tends towards a true Christian manliness."</blockquote>
+          <cite>— The Boys' Brigade, founded 1883</cite>
+        </div>
+        <div class="plaque">
+          <span class="eyebrow" style="margin-bottom:14px; display:inline-flex;">Our Motto</span>
+          <blockquote>"Sure &amp; Steadfast" — taken from the Book of Hebrews, chapter 6, verse 19.</blockquote>
+          <cite>— Hebrews 6:19</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our Sections, In Full</span>
+        <h2>How a boy grows through the Brigade</h2>
+      </div>
+      <div class="roster">
+        <div class="roster-card">
+          <span class="roster-chip">I</span>
+          <h3>Anchor Boys'</h3>
+          <span class="roster-age">Ages 6 – 8</span>
+          <p>The youngest members are introduced to Bible stories, songs and simple activities designed to spark curiosity, creativity and early friendships in a safe, fun environment.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">II</span>
+          <h3>Junior Boys'</h3>
+          <span class="roster-age">Ages 9 – 11</span>
+          <p>Boys build teamwork and take on more responsibility through games, badge work, and their first opportunities for camps and outings away from home.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">III</span>
+          <h3>Company Boys'</h3>
+          <span class="roster-age">Ages 12 – 14</span>
+          <p>Young people take on drill, community service and the early stages of the Brigade's Award Scheme, with more say in shaping their own programme.</p>
+        </div>
+        <div class="roster-card">
+          <span class="roster-chip">IV</span>
+          <h3>Senior Boys'</h3>
+          <span class="roster-age">Ages 15 – 18</span>
+          <p>Seniors lead their own projects and challenges, supported by officers, and can work toward the Brigade's highest honours including the Founder's Badge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Formation &amp; Founder</span>
+        <h2>A movement since 1883</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+        <div>
+          <h4>Formation</h4>
+          <p>The Boys' Brigade is the world's first uniformed youth organization, founded in Glasgow, Scotland, in 1883. It went on to inspire many of the uniformed youth movements that followed, and today operates across the Commonwealth and beyond, including a strong presence throughout Nigeria.</p>
+        </div>
+        <div>
+          <h4>Our Founder</h4>
+          <p>Sir William Alexander Smith (1854–1914) started The Boys' Brigade in 1883 and dedicated his life to it as Brigade Secretary. He was knighted by King Edward VII in 1909 for his work with young people. Founder's Day is marked each year on the last Sunday of October.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Leadership</span>
+        <h2>The State Executive</h2>
+      </div>
+      <div class="card-grid" id="stateExecutiveCards"><p>Loading State Executive profiles…</p></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ PROGRAMMES ============ -->
+<section class="page" id="page-programmes">
+  <section class="tight">
+    <div class="wrap">
+      <div id="firebase-programmes" aria-live="polite"></div>
+      <div class="section-head">
+       <h2>Programmes &amp; Activities</h2>
+
+<p>
+  The Anambra State Council of The Boys' Brigade Nigeria organizes a range of
+  programmes and activities that support Christian faith, discipline,
+  leadership, training, fellowship and service among its members.
+</p>
+      <div class="card-grid">
+<div class="card">
+
+  <span class="tag">Weekly</span>
+  <h3>Company Meetings</h3>
+  <p>
+    Weekly gatherings held by Companies for Bible study, drill, Boys' Brigade
+    knowledge, games and other activities across the different sections.
+  </p>
+</div>
+
+<div class="card">
+  
+  <span class="tag">Annual</span>
+  <h3>Boys' Brigade Week</h3>
+  <p>
+    An annual period of outreach and engagement in which members participate
+    in activities that promote the Boys' Brigade and support the advancement
+    of the organization.
+  </p>
+</div>
+
+<div class="card">
+  
+  <span class="tag">Annual / Scheduled</span>
+  <h3>Training</h3>
+  <p>
+    Training programmes that develop members in drill, theory, Boys' Brigade
+    knowledge and educational skills, with certificates awarded upon successful
+    completion of qualifying programmes.
+  </p>
+</div>
+
+<div class="card">
+
+  <span class="tag">Annual</span>
+  <h3>Founder's Day</h3>
+  <p>
+    An annual occasion dedicated to remembering the history and events that
+    made the existence of the Boys' Brigade possible.
+  </p>
+</div>
+
+<div class="card">
+  <span class="tag">Annual / As Required</span>
+  <h3>Camps</h3>
+  <p>
+    Gatherings that bring boys together for fellowship, recreation, discipline,
+    training and other activities according to the purpose of the camp.
+  </p>
+</div>
+
+<div class="card">
+  <span class="tag">Annual</span>
+  <h3>Enrollment Service</h3>
+  <p>
+    An annual service for recognizing qualified members, reaffirming their
+    faith and recognizing or promoting officers who have met the required
+    qualifications.
+  </p>
+</div>
+
+<div class="card">
+  <span class="tag">Scheduled</span>
+  <h3>Leadership Programmes</h3>
+  <p>
+    Leadership development activities organized at State, Battalion or Group
+    Council level to encourage responsibility, service and leadership among
+    members.
+  </p>
+</div>
+
+<div class="card">
+  <span class="tag">Scheduled</span>
+  <h3>Quiz Competitions</h3>
+  <p>
+    Competitions that promote Bible knowledge, Boys' Brigade knowledge,
+    learning and healthy participation among members.
+  </p>
+</div>
+
+<div class="card">
+  <span class="tag">As Scheduled</span>
+  <h3>Community Outreach</h3>
+  <p>
+    Outreach activities through which members engage with and contribute to
+    their communities as part of the service-oriented mission of the Brigade.
+  </p>
+</div>
+      </div>
+      <p class="placeholder-note" style="margin-top:24px;">[Placeholder — swap in your Council's real programme names, dates and venues]</p>
+    </div>
+  </section>
+</section>
+
+<!-- UPCOMING PROGRAMMES -->
+<section class="upcoming-programmes"
+  style="
+    width: 100%;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  ">
+
+  <!-- SECTION HEADER -->
+  <div style="margin-bottom: 2rem;">
+    <span class="tag">EVENT CALENDAR</span>
+
+    <h2 style="
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    ">
+      Upcoming Programmes
+    </h2>
+
+    <p style="
+      max-width: 650px;
+      line-height: 1.8;
+      margin: 0;
+    ">
+      Stay informed about upcoming Boys' Brigade programmes, training
+      activities, competitions and events across Anambra State.
+      Check the programme details below for dates, venues and hosting councils.
+    </p>
+  </div>
+
+  <!-- PROGRAMME TABLE -->
+  <div style="
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(128,128,128,0.25);
+    box-sizing: border-box;
+  ">
+
+    <table style="
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      text-align: left;
+    ">
+
+      <thead>
+        <tr style="background: var(--navy, #0B1F3A); color: #fff;">
+          <th style="padding: 1.1rem 1.25rem;">Programme</th>
+          <th style="padding: 1.1rem 1.25rem;">Date</th>
+          <th style="padding: 1.1rem 1.25rem;">Venue</th>
+          <th style="padding: 1.1rem 1.25rem;">Host</th>
+        </tr>
+      </thead>
+
+      <tbody id="eventCalendarRows">
+        <tr>
+          <td colspan="4" style="
+            padding: 2rem 1rem;
+            text-align: center;
+            opacity: 0.75;
+            line-height: 1.7;
+          ">
+            Upcoming programmes will be announced here.
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+  <!-- FOOTNOTE -->
+  <p style="
+    font-size: 0.82rem;
+    line-height: 1.7;
+    opacity: 0.7;
+    margin-top: 1rem;
+  ">
+    Programme details are subject to official announcements by the
+    Anambra State Council and the respective hosting councils.
+  </p>
+
+</section>
+
+<style>
+  @media (max-width: 600px) {
+    .upcoming-programmes {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      margin-top: 3rem !important;
+      margin-bottom: 3rem !important;
+    }
+  }
+</style>
+
+<!-- ============ TRAINING ============ -->
+<section class="page" id="page-training">
+  <section class="tight">
+    <div class="wrap">
+      <div id="firebase-training" aria-live="polite"></div>
+      <div class="section-head">
+        <span class="eyebrow">Training</span>
+        <h2>The Officers &amp; NCO'S pathway</h2>
+        <p>A genuine progression — each stage builds on the one before it.</p>
+      </div>
+     
+      <div class="pathway">
+      <div class="pathway-step"><div class="num">1</div><h4>NCOs' COURSE (BASIC I-III)</h4><p>Majorly held by the Battalion/Group Council annually, though the State Council may also conduct it. The course trains and equips boys with Boys' Brigade knowledge, basic drill, teamwork and discipline.</p></div>
+
+      <div class="pathway-step"><div class="num">2</div><h4>OFFICERS' COURSE (BASIC I-III)</h4><p>Majorly held by the Battalion/Group Council annually, though the State Council may also conduct it. The course develops participants' Boys' Brigade knowledge, drill skills, teamwork and discipline.</p></div>
+
+      <div class="pathway-step"><div class="num">3</div><h4>OFFICERS' COURSE (BASIC IV)</h4><p>Conducted by the State Council alone, biannually, to develop officers' advanced leadership and drill skills and prepare them for the National Brigade School.</p></div>
+
+      <div class="pathway-step"><div class="num">4</div><h4>NATIONAL BRIGADE SCHOOL COURSE</h4><p>Conducted exclusively by the National Council on a biannual basis across Nigeria's six geographical regions.</p></div>
+
+     <div class="pathway-step"><div class="num">5</div><h4>NATIONAL TRAIN-THE-TRAINERS COURSE</h4><p>Conducted exclusively by the National Council at three-year intervals.</p></div>
+
+     <div class="pathway-step"><div class="num">6</div><h4>ADVANCED NATIONAL TRAIN-THE-TRAINERS COURSE</h4><p>Conducted exclusively by the National Council at five-year intervals.</p></div>
+   </div>
+<p>
+
+</p>
+<div class="training-certification">
+  <h4>EXAMINATION AND CERTIFICATION</h4>
+  <p>All courses conclude with theory and drill examinations. Certificates are issued to participants who successfully pass the required examinations.</p>
+</div>
+    </div>
+  </section>
+
+  <section class="band-cream tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"> Award Scheme</span>
+        <h2>Bronze, Silver &amp; Gold</h2>
+        <p>Boys can work toward these awards as they progress through Company and Senior sections.</p>
+      </div>
+      <table class="schedule">
+        <thead><tr><th>Award</th><th>Typical Age</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>Battalion</td><td>-</td><td>Company service, skill, physical activity</td></tr>
+          <tr><td>State </td><td>-</td><td>Expedition, extended service, leadership</td></tr>
+          <tr><td>Gold President's Award</td><td></td><td>Exceptional service and Evangelism </td></tr>
+        </tbody>
+      </table>
+      <p class="placeholder-note" style="margin-top:18px;">[Placeholder — confirm current training calendar and award requirements with the State Training Officer]</p>
+    </div>
+  </section>
+</section>
+
+
+<!-- ============ LIBRARY ============ -->
+
+<section class="page" id="page-library">
+  <section class="tight">
+    <div class="wrap">
+
+      <div class="section-head">
+        <span class="eyebrow">Resources & Publications</span>
+        <h2>BBN ANSC Digital Library</h2>
+        <p>
+          Explore official Boys' Brigade resources, training materials,
+          historical records and other public documents from the
+          Anambra State Council.
+        </p>
+      </div>
+
+      <div id="firebase-library-resources" class="library-grid" aria-live="polite"></div>
+      <div class="library-grid">
+
+        <div class="library-card">
+          <div class="library-icon">01</div>
+          <h3>Bible Study & Christian Resources</h3>
+          <p>Bible study materials, Christian education and worship resources.</p>
+          <a href="https://drive.google.com/drive/folders/1i497Tt21JsL9E1FbzCHVQtftu4afW-A4?usp=sharing" 
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+        <div class="library-card">
+          <div class="library-icon">02</div>
+          <h3>Boys' Resources</h3>
+          <p>Learning materials and useful resources for Boys' Brigade members.</p>
+          <a href="https://drive.google.com/drive/folders/1TsEr3jlL1SltWm6IjtgfJwq-SPz-TdKa?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+        <div class="library-card">
+          <div class="library-icon">03</div>
+          <h3>Drill & Training</h3>
+          <p>Drill instructions, training documents and course resources.</p>
+          <a href="https://drive.google.com/drive/folders/1RLYUSwQAqCWKnIokjp53q_H_9zww3YhC?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+        <div class="library-card">
+          <div class="library-icon">04</div>
+          <h3>Governance & Constitution</h3>
+          <p>Constitutional documents, governance materials and official guidelines.</p>
+          <a href="https://drive.google.com/drive/folders/17iW4vGLAvJgp8LXHBcqAvFmQmgWKgb_W?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+        <div class="library-card">
+          <div class="library-icon">05</div>
+          <h3>Handbooks & Manuals</h3>
+          <p>Handbooks, reference manuals and approved guidance documents.</p>
+          <a href="https://drive.google.com/drive/folders/1wlgRelB-u30uKdD-dVzcpKKoNDvnsxIl?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+        <div class="library-card">
+          <div class="library-icon">06</div>
+          <h3>History & Heritage</h3>
+          <p>Historical materials and resources documenting the Brigade's heritage.</p>
+          <a href="https://drive.google.com/drive/folders/18heKTR76NP-wjb_WuZ6dSlgtuodY_mkx?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+        <div class="library-card">
+          <div class="library-icon">07</div>
+          <h3>Other Public Documents</h3>
+          <p>Additional approved public documents and publications.</p>
+          <a href="https://drive.google.com/drive/folders/1RcqL0QS31yx5QxNkdXgwi1UHOpqh8UDR?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-navy">Open Folder ↗</a>
+        </div>
+
+      </div>
+
+      <p class="library-note">
+        Documents are provided for public access in accordance with
+        the sharing permissions set by the Anambra State Council.
+      </p>
+
+    </div>
+  </section>
+</section>
+
+<!-- ============ ANONYMOUS BOX ============ -->
+<section class="page" id="page-anonymous">
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">More · Anonymous Box</span>
+        <h2>Complaints, suggestions &amp; reports</h2>
+        <h2>No Emergency Messages !!!</h2>
+        <h5 style="margin-bottom:0;">"Not only the action, but also the purpose, must be good." — Aristotle</h5>
+        <p>A safe, confidential channel for boys, parents and officers to speak up. You never have to give your name.</p>
+      </div>
+
+      <form class="form-shell" id="anonForm" onsubmit="submitAnon(event)">
+        <div class="field">
+          <label>Type of message</label>
+          <div class="radio-row">
+            <label><input type="radio" name="anonType" value="Complaint" checked> Complaint</label>
+            <label><input type="radio" name="anonType" value="Suggestion"> Suggestion</label>
+            <label><input type="radio" name="anonType" value="Report"> Report</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="anonCompany">Company / Section (optional)</label>
+          <input type="text" id="anonCompany" placeholder="e.g. 4th Anambra Company">
+        </div>
+        <div class="field">
+          <label for="anonMessage">Your message</label>
+          <textarea id="anonMessage" required placeholder="Write as much detail as you're comfortable sharing..."></textarea>
+        </div>
+        <div class="field">
+          <label for="anonContact">Contact info (only if you want a reply — stays optional)</label>
+          <input type="text" id="anonContact" placeholder="Phone or email, or leave blank to stay fully anonymous">
+        </div>
+        <button type="submit" class="btn btn-red">Submit Anonymously</button>
+        <p class="form-note">Messages are submitted to the Council's private administrator inbox. You may leave contact details blank to remain anonymous.</p>
+      </form>
+
+      <div class="confirm-box" id="anonConfirm">
+        <h3>Received.</h3>
+        <p style="color:rgba(246,241,231,.85);">Thank you — your message matters, and it has been noted exactly as submitted, with no name attached unless you chose to add one.</p>
+        <button class="btn btn-outline" onclick="resetAnon()">Submit another</button>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ ARTICLES ============ -->
+<section class="page" id="page-articles">
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">More · Articles</span>
+        <h2>News &amp; reflections</h2>
+      </div>
+
+      <div id="firebase-articles" class="published-articles" aria-live="polite">
+        <p class="article-empty">Published articles from the State Council will appear here.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ RECOGNITION ============ -->
+<section class="page" id="page-recognition"><section class="tight"><div class="wrap"><div class="section-head"><span class="eyebrow">Council Recognition</span><h2>Honouring service and achievement</h2><p>Recognising the people whose service strengthens the Brigade.</p></div><div id="firebase-recognition" class="card-grid" aria-live="polite"><p>Published recognitions will appear here.</p></div></div></section></section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" id="page-contact">
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Contact Us</span>
+        <h2>Get in touch with the Council</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info-row">
+            <div class="ic">📍</div>
+            <div><h4>Council Office</h4><p>Address to be added — Awka, Anambra State, Nigeria.</p></div>
+          </div>
+          <div class="contact-info-row">
+            <div class="ic">📞</div>
+            <div><h4>Phone</h4><p>+234 000 000 0000 (placeholder)</p></div>
+          </div>
+          <div class="contact-info-row">
+            <div class="ic">✉</div>
+            <div><h4>Email</h4><p>info@bbanambra.example (placeholder)</p></div>
+          </div>
+          <div class="contact-info-row">
+            <div class="ic">🕑</div>
+            <div><h4>Office Hours</h4><p>Monday – Friday, 9am – 4pm (placeholder)</p></div>
+          </div>
+          <iframe class="map-frame" loading="lazy" title="Map of Awka, Anambra State"
+            src="https://www.google.com/maps?q=Awka,+Anambra+State,+Nigeria&output=embed"></iframe>
+        </div>
+
+        <form class="form-shell" id="contactForm">
+          <div class="field"><label for="cName">Full name</label><input id="cName" type="text" required></div>
+          <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" required></div>
+          <div class="field"><label for="cSubject">Subject</label><input id="cSubject" type="text"></div>
+          <div class="field"><label for="cMessage">Message</label><textarea id="cMessage" required></textarea></div>
+          <button type="submit" class="btn btn-navy">Send Message</button>
+          <p class="form-note" id="contactFormStatus" aria-live="polite">Your message will be delivered to the Council admin inbox. Email notifications require a separate email service.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <img src="bb.png" alt="Boys' Anambra Brigade logo" style="width:42px; height:42px; border-radius:50%;">
+          <span class="brand-text"><span class="name" style="color:var(--cream);">The Boys' Brigade</span><br><span class="sub">Anambra State Council</span></span>
+        </div>
+        <p class="footer-motto">"Sure &amp; Steadfast"</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a onclick="goTo('about')" href="#">About Us</a>
+        <a onclick="goTo('programmes')" href="#">Programmes</a>
+        <a onclick="goTo('training')" href="#">Training</a>
+        <a onclick="goTo('contact')" href="#">Contact Us</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a onclick="goTo('library')" href="#">Library</a>
+        <a onclick="goTo('quiz')" href="#">Quiz</a>
+        <a onclick="goTo('anonymous')" href="#">Anonymous Box</a>
+        <a onclick="goTo('articles')" href="#">Articles</a>
+        <a onclick="goTo('recognition')" href="#">Recognition</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Facebook (add link)</a>
+        <a href="#">Instagram (add link)</a>
+        <a href="#">X / Twitter (add link)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> The Boys' Brigade Nigeria — Anambra State Council. All rights reserved.</span>
+      <span>Built for a state council that trains boys to be Sure &amp; Steadfast.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- routing ---------- */
+  function goTo(pageId){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + pageId);
+    if(target) target.classList.add('active');
+
+    document.querySelectorAll('[data-page]').forEach(el => el.classList.remove('current'));
+    document.querySelectorAll('[data-page="'+pageId+'"]').forEach(el => el.classList.add('current'));
+
+    window.scrollTo({top:0, behavior:'smooth'});
+    history.replaceState(null, '', '#' + pageId);
+
+    // close mobile menu + dropdown
+    document.getElementById('primaryNav').classList.remove('open');
+    document.getElementById('moreWrap').classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+
+    if(pageId === 'quiz') startQuiz();
+  }
+
+  const menuToggle = document.getElementById('menuToggle');
+  menuToggle.addEventListener('click', () => {
+    const nav = document.getElementById('primaryNav');
+    const open = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  const moreWrap = document.getElementById('moreWrap');
+  document.getElementById('moreTrigger').addEventListener('click', (e) => {
+    e.stopPropagation();
+    moreWrap.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if(!moreWrap.contains(e.target)) moreWrap.classList.remove('open');
+  });
+
+  // load initial page from hash
+  window.addEventListener('DOMContentLoaded', () => {
+    const initial = (location.hash || '#home').replace('#','');
+    if(document.getElementById('page-' + initial)) goTo(initial); else goTo('home');
+  });
+
+  /* ---------- articles ---------- */
+  function toggleArticle(btn){
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open');
+    btn.textContent = body.classList.contains('open') ? 'Show less' : 'Read more';
+  }
+
+  /* ---------- anonymous box ---------- */
+  function submitAnon(e){
+    e.preventDefault();
+    document.getElementById('anonForm').style.display = 'none';
+    document.getElementById('anonConfirm').classList.add('show');
+  }
+  function resetAnon(){
+    document.getElementById('anonForm').reset();
+    document.getElementById('anonForm').style.display = 'block';
+    document.getElementById('anonConfirm').classList.remove('show');
+  }
+
+
+  /* ---------- quiz ---------- */
+  const quizData = [
+    {q:"In what year was The Boys' Brigade founded?", opts:["1883","1890","1908","1920"], correct:0},
+    {q:"Who founded The Boys' Brigade?", opts:["Robert Baden-Powell","William Alexander Smith","John Wesley","David Livingstone"], correct:1},
+    {q:"What is the Boys' Brigade motto?", opts:["Be Prepared","Sure and Steadfast","Onward and Upward","Faith and Courage"], correct:1},
+    {q:"The Brigade's motto is drawn from which book of the Bible?", opts:["Psalms","Romans","Hebrews","Matthew"], correct:2},
+    {q:"Which is the youngest section of the Brigade?", opts:["Seniors","Company","Juniors","Anchors"], correct:3},
+  ];
+  let quizIndex = 0;
+  let quizScore = 0;
+  let answered = false;
+
+  function startQuiz(){
+    quizIndex = 0; quizScore = 0; answered = false;
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('quizQuestion').style.display = 'block';
+    renderQuizQuestion();
+  }
+
+  function renderQuizQuestion(){
+    answered = false;
+    const data = quizData[quizIndex];
+    document.getElementById('quizProgress').textContent = 'Question ' + (quizIndex+1) + ' of ' + quizData.length;
+    document.getElementById('quizFill').style.width = ((quizIndex)/quizData.length*100) + '%';
+
+    const qEl = document.getElementById('quizQuestion');
+    qEl.innerHTML = '<h3>' + data.q + '</h3><div class="quiz-options"></div>';
+    const optWrap = qEl.querySelector('.quiz-options');
+    data.opts.forEach((opt, i) => {
+      const b = document.createElement('button');
+      b.className = 'quiz-opt';
+      b.textContent = opt;
+      b.onclick = () => selectAnswer(i, b);
+      optWrap.appendChild(b);
+    });
+  }
+
+  function selectAnswer(i, btnEl){
+    if(answered) return;
+    answered = true;
+    const data = quizData[quizIndex];
+    const allBtns = document.querySelectorAll('.quiz-opt');
+    allBtns.forEach(b => b.disabled = true);
+    if(i === data.correct){
+      quizScore++;
+      btnEl.classList.add('correct');
+    } else {
+      btnEl.classList.add('incorrect');
+      allBtns[data.correct].classList.add('correct');
+    }
+    setTimeout(() => {
+      quizIndex++;
+      if(quizIndex < quizData.length){
+        renderQuizQuestion();
+      } else {
+        document.getElementById('quizFill').style.width = '100%';
+        document.getElementById('quizQuestion').style.display = 'none';
+        document.getElementById('quizResult').style.display = 'block';
+        document.getElementById('quizScore').textContent = quizScore + ' / ' + quizData.length;
+      }
+    }, 900);
+  }
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+const firebaseConfig = {
+ apiKey:"AIzaSyCQhmSeTZ0XOjmjpNXOKtvCXFc7sUKt85w", authDomain:"bbn-anambra-state-council.firebaseapp.com",
+ projectId:"bbn-anambra-state-council", storageBucket:"bbn-anambra-state-council.firebasestorage.app",
+ messagingSenderId:"437804623632", appId:"1:437804623632:web:8264651e31cf8a3fb9a795"
+};
+const publicDb=getFirestore(initializeApp(firebaseConfig));
+const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dateLabel=v=>{if(!v)return '';const d=typeof v==='string'?new Date(v):(v?.toDate?v.toDate():null);return d&&!Number.isNaN(d.getTime())?d.toLocaleDateString(undefined,{day:'numeric',month:'long',year:'numeric'}):String(v)};
+async function published(name){try{const snap=await getDocs(query(collection(publicDb,name),where('status','==','published')));return snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));}catch(e){console.warn('Public content load failed:',name,e);return [];}}
+function renderCalendar(items){const body=document.getElementById('eventCalendarRows');if(!body)return;if(!items.length){body.innerHTML='<tr><td colspan="4" style="padding:2rem 1rem;text-align:center;opacity:.75;line-height:1.7">Upcoming programmes will be announced here.</td></tr>';return;}body.innerHTML=items.filter(x=>x.status==='published').sort((a,b)=>String(a.date||'').localeCompare(String(b.date||''))).map(x=>`<tr><td style="padding:1rem 1.25rem;border-top:1px solid rgba(128,128,128,.2)"><strong>${esc(x.title||'Programme')}</strong>${x.description?`<div style="font-size:.88rem;margin-top:.35rem;opacity:.8">${esc(x.description)}</div>`:''}</td><td style="padding:1rem 1.25rem;border-top:1px solid rgba(128,128,128,.2)">${esc(dateLabel(x.date))}</td><td style="padding:1rem 1.25rem;border-top:1px solid rgba(128,128,128,.2)">${esc(x.location||x.venue||'To be announced')}</td><td style="padding:1rem 1.25rem;border-top:1px solid rgba(128,128,128,.2)">${esc(x.host||x.organisingCouncil||'Anambra State Council')}</td></tr>`).join('');}
+function renderArticles(items){const host=document.getElementById('firebase-articles');if(!host)return;if(!items.length){host.innerHTML='<p class="article-empty">No articles have been published yet. Please check back soon.</p>';return;}const params=new URLSearchParams(location.search);const requested=params.get('article');host.innerHTML=items.map((x,i)=>{const paragraphs=String(x.body||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');const shareUrl=location.href.split('#')[0].split('?')[0]+'?article='+encodeURIComponent(x.id)+'#articles';const selected=requested===x.id;return `<article class="article" id="article-${esc(x.id)}"><span class="article-date">${esc(dateLabel(x.publishedAt||x.date||x.createdAt?.toDate?.()))}</span><h3>${esc(x.title||'Untitled article')}</h3>${x.author?`<p><strong>By:</strong> ${esc(x.author)}</p>`:''}${x.coverImageUrl?`<img src="${esc(x.coverImageUrl)}" alt="${esc(x.title||'Article cover')}" loading="lazy" style="width:100%;max-width:720px;max-height:420px;object-fit:cover;border-radius:8px;margin:.5rem 0 1rem">`:''}<p class="article-excerpt">${esc(x.excerpt||'')}</p><div class="article-full ${selected?'open':''}" id="article-full-${i}">${paragraphs||'<p>Full article content has not been added yet.</p>'}${x.driveUrl?`<p><a href="${esc(x.driveUrl)}" target="_blank" rel="noopener noreferrer">Open attached document ↗</a></p>`:''}</div><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px"><button class="read-more" type="button" data-read-article="${i}">${selected?'Show less':'Read article'}</button><button class="read-more" type="button" data-copy-article="${esc(shareUrl)}">Copy share link ↗</button><a class="read-more" href="https://wa.me/?text=${encodeURIComponent((x.title||'BBN Anambra article')+' '+shareUrl)}" target="_blank" rel="noopener noreferrer">Share on WhatsApp ↗</a></div></article>`}).join('');host.querySelectorAll('[data-read-article]').forEach(btn=>btn.addEventListener('click',()=>{const full=host.querySelector('#article-full-'+btn.dataset.readArticle);const open=full.classList.toggle('open');btn.textContent=open?'Show less':'Read article';}));host.querySelectorAll('[data-copy-article]').forEach(btn=>btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(new URL(btn.dataset.copyArticle,location.href).href);btn.textContent='Link copied';}catch(e){prompt('Copy this article link:',new URL(btn.dataset.copyArticle,location.href).href);}}));if(requested){if(typeof goTo==='function')goTo('articles');setTimeout(()=>document.getElementById('article-'+CSS.escape(requested))?.scrollIntoView({behavior:'smooth',block:'start'}),350);}}
+function renderRecognition(items){const host=document.getElementById('firebase-recognition');if(!host)return;if(!items.length){host.innerHTML='<p class="article-empty">There are no published recognitions yet.</p>';return;}host.innerHTML=items.map(x=>`<article class="card">${x.imageUrl?`<img src="${esc(x.imageUrl)}" alt="${esc(x.name||'Recognition')}" loading="lazy" style="width:100%;max-height:260px;object-fit:cover">`:''}<span class="tag">${esc(x.date||'Council Recognition')}</span><h3>${esc(x.title||'Recognition')}</h3><p><strong>${esc(x.name||'')}</strong></p><p>${esc(x.description||'')}</p><button class="read-more" type="button" data-copy-recognition="${esc(location.href.split('#')[0].split('?')[0]+'?recognition='+encodeURIComponent(x.id)+'#recognition')}">Copy share link ↗</button></article>`).join('');host.querySelectorAll('[data-copy-recognition]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(new URL(b.dataset.copyRecognition,location.href).href);b.textContent='Link copied';}catch(e){prompt('Copy this recognition link:',new URL(b.dataset.copyRecognition,location.href).href);}}));}
+async function renderStats(){try{const rec=await getDoc(doc(publicDb,'siteSettings','publicStats'));if(!rec.exists())return;const v=rec.data();[['companies','public-stat-companies'],['officers','public-stat-officers'],['trained','public-stat-trained'],['councils','public-stat-councils']].forEach(([k,id])=>{const el=document.getElementById(id);if(el&&v[k]!==undefined)el.textContent=String(v[k]);});}catch(e){console.error('Homepage statistics could not be loaded. Check the siteSettings/publicStats Firestore read rule.',e);}}
+function renderLibrary(items){const host=document.getElementById('firebase-library-resources');if(!host)return;if(!items.length){host.innerHTML='';return;}host.innerHTML=items.map(x=>`<article class="library-card"><div class="library-icon">↗</div><h3>${esc(x.title||'Resource')}</h3><p>${esc(x.description||'')}</p><p style="font-size:.85rem;opacity:.75">${esc(x.category||'Public document')}</p>${x.driveUrl?`<a class="btn btn-navy" href="${esc(x.driveUrl)}" target="_blank" rel="noopener noreferrer">Open / Download ↗</a>`:''}</article>`).join('');}
+async function renderExecutive(){const host=document.getElementById('stateExecutiveCards');if(!host)return;try{const snap=await getDocs(collection(publicDb,'executive'));const items=snap.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.status==='published' || !x.status).sort((a,b)=>String(a.position||'').localeCompare(String(b.position||'')));if(!items.length){host.innerHTML='<p>State Executive profiles will be published here when available.</p>';return;}host.innerHTML=items.map(x=>`<article class="card">${x.photoUrl?`<div style="margin:-.25rem 0 1rem"><img src="${esc(x.photoUrl)}" alt="Passport photograph of ${esc(x.name||'executive officer')}" loading="lazy" style="width:100px;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(11,31,58,.12)"></div>`:`<div class="card-icon">${esc((x.position||'BB').split(/\s+/).map(w=>w[0]).join('').slice(0,3).toUpperCase())}</div>`}<span class="tag">${esc(x.position||'Executive Officer')}</span><h3>${esc(x.name||'')}</h3>${x.battalion?`<p><strong>Battalion:</strong> ${esc(x.battalion)}</p>`:''}${x.company?`<p><strong>Company:</strong> ${esc(x.company)}</p>`:''}${x.phone?`<p><a href="tel:${esc(x.phone.replace(/[^+\d]/g,''))}">${esc(x.phone)}</a></p>`:''}</article>`).join('');}catch(e){console.warn('Executive profiles could not load',e);host.innerHTML='<p>Executive profiles are temporarily unavailable.</p>';}}
+
+async function renderPublic(){const [announcements,articles,library,recognition]=await Promise.all(['announcements','articles','libraryResources','recognition'].map(published));renderCalendar(announcements);renderArticles(articles);renderLibrary(library);renderRecognition(recognition);renderStats();}
+const contactForm=document.getElementById('contactForm');
+if(contactForm)contactForm.addEventListener('submit',async e=>{e.preventDefault();const btn=contactForm.querySelector('button[type="submit"]');const status=document.getElementById('contactFormStatus');const name=document.getElementById('cName').value.trim();const email=document.getElementById('cEmail').value.trim();const subject=document.getElementById('cSubject').value.trim()||'General enquiry';const message=document.getElementById('cMessage').value.trim();if(message.length<5){status.textContent='Please enter a longer message.';return;}btn.disabled=true;status.textContent='Sending message…';try{await addDoc(collection(publicDb,'anonymousMessages'),{type:'Suggestion',company:'Contact Form — '+subject+' (from '+name+')',message,contact:email,status:'new',createdAt:serverTimestamp()});contactForm.reset();status.textContent='Thank you. Your message has been sent to the Council admin inbox.';}catch(err){console.error(err);status.textContent='Message could not be sent. Please try again later.';}finally{btn.disabled=false;}});
+const anonForm=document.getElementById('anonForm');
+if(anonForm)anonForm.addEventListener('submit',async e=>{e.preventDefault();const submit=anonForm.querySelector('button[type="submit"]');const message=document.getElementById('anonMessage').value.trim();if(message.length<5){alert('Please enter a little more detail in your message.');return;}submit.disabled=true;submit.textContent='Submitting securely…';try{await addDoc(collection(publicDb,'anonymousMessages'),{type:anonForm.querySelector('input[name="anonType"]:checked')?.value||'Report',company:document.getElementById('anonCompany').value.trim(),message,contact:document.getElementById('anonContact').value.trim(),status:'new',createdAt:serverTimestamp()});anonForm.style.display='none';document.getElementById('anonConfirm').classList.add('show');}catch(err){console.error(err);alert('Your message could not be submitted. Please try again later.');}finally{submit.disabled=false;submit.textContent='Submit Anonymously';}});
+renderPublic();
+renderExecutive();
+</script>
+
+</body>
+</html>

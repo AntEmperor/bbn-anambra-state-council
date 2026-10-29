@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Boys' Brigade Nigeria — Anambra State Council</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--navy2:#142e50;--red:#A81F2D;--gold:#C9A227;--cream:#F7F4EC;--paper:#fff;--ink:#18263a;--muted:#758195;--line:#e5e9ef;--green:#18794e;--shadow:0 12px 35px rgba(11,31,58,.07)}
+*{box-sizing:border-box}body{margin:0;background:#f5f6f8;color:var(--ink);font-family:'DM Sans',sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.top-stripe{height:6px;background:linear-gradient(90deg,var(--red) 0 34%,var(--gold) 34% 67%,var(--navy) 67%)}
+#loginScreen{min-height:calc(100vh - 6px);display:flex;align-items:center;justify-content:center;padding:28px 16px;background:var(--cream)}.login-wrap{width:100%;max-width:430px}.brand{text-align:center;margin-bottom:25px}.logo{width:86px;height:86px;border-radius:22px;background:white;border:1px solid #e8e2d4;display:grid;place-items:center;margin:0 auto 15px;overflow:hidden;box-shadow:var(--shadow)}.logo img{width:84%;height:84%;object-fit:contain}.brand h1{font:700 26px 'Playfair Display',serif;margin:0 0 7px;color:var(--navy)}.brand p{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin:0}.login-card{background:white;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:var(--shadow)}.login-card h2{font:700 29px 'Playfair Display',serif;margin:0 0 7px;color:var(--navy)}.gold-line{height:4px;width:42px;background:var(--gold);border-radius:5px;margin:14px 0 24px}.field{margin:0 0 18px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}.field input{width:100%;border:1px solid var(--line);border-radius:9px;padding:13px 14px;outline:none}.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c9a22720}.primary{border:0;background:var(--navy);color:white;border-radius:9px;padding:13px 16px;font-weight:700}.primary:hover{background:var(--red)}.full{width:100%}.msg{display:none;padding:11px 13px;border-radius:8px;font-size:13px;margin-bottom:16px;line-height:1.5}.msg.error{display:block;background:#fff0f0;border:1px solid #f3cccc;color:#9c1c28}.login-foot{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}.site-footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.8;padding:18px}
+#app{display:none;min-height:100vh}.sidebar{position:fixed;inset:6px auto 0 0;width:250px;background:var(--navy);color:#fff;padding:23px 15px;display:flex;flex-direction:column;z-index:10;overflow-y:auto}.side-brand{display:flex;align-items:center;gap:11px;padding:0 8px 24px;border-bottom:1px solid #ffffff1c}.side-brand .small-logo{width:43px;height:43px;border-radius:11px;background:#fff;display:grid;place-items:center;overflow:hidden;flex-shrink:0}.small-logo img{width:90%;height:90%;object-fit:contain}.side-brand strong{display:block;font:700 15px 'Playfair Display',serif;line-height:1.25}.side-brand small{display:block;color:#e7c96c;font-size:10px;margin-top:4px}.nav-label{font:600 10px 'JetBrains Mono',monospace;color:#91a0b6;letter-spacing:1.4px;margin:23px 10px 9px;text-transform:uppercase}.nav-btn{display:flex;align-items:center;gap:12px;width:100%;border:0;background:transparent;color:#d8e0eb;text-align:left;padding:11px 12px;border-radius:9px;margin:2px 0;font-size:13px}.nav-btn:hover,.nav-btn.active{background:#ffffff14;color:#fff}.nav-btn.active{box-shadow:inset 3px 0 var(--gold)}.nav-icon{width:20px;text-align:center;font-size:17px}.side-bottom{margin-top:auto;border-top:1px solid #ffffff1c;padding:18px 8px 0}.admin-chip{font-size:12px;overflow-wrap:anywhere;color:#fff}.admin-chip small{display:block;color:#aab7c8;font-size:10px;margin-bottom:5px}.signout{margin-top:13px;background:transparent;border:1px solid #ffffff50;color:#fff;padding:9px 12px;border-radius:8px;width:100%;font-size:12px}.signout:hover{background:#a81f2d}
+.main{margin-left:250px;min-height:100vh}.topbar{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:17px 30px;display:flex;align-items:center;justify-content:space-between;gap:18px}.topbar h1{font:700 22px 'Playfair Display',serif;color:var(--navy);margin:0}.topbar p{margin:4px 0 0;font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:12px}.status{font-size:11px;color:var(--green);background:#e9f7ef;padding:7px 10px;border-radius:20px;font-weight:700}.mobile-menu{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px}.content{padding:27px 30px 42px;max-width:1500px;margin:auto}.welcome{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}.eyebrow{font:600 10px 'JetBrains Mono',monospace;color:var(--red);letter-spacing:1.4px;text-transform:uppercase}.welcome h2{font:700 27px 'Playfair Display',serif;color:var(--navy);margin:7px 0}.welcome p{color:var(--muted);font-size:13px;margin:0;line-height:1.6}.date-pill{background:white;border:1px solid var(--line);border-radius:9px;padding:10px 13px;color:var(--muted);font-size:12px;white-space:nowrap}
+.notice{display:flex;gap:11px;background:#fff9e9;border:1px solid #f0dfaa;color:#6f5710;border-radius:10px;padding:13px 15px;font-size:12px;line-height:1.55;margin-bottom:22px}.notice strong{display:block;margin-bottom:2px}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #d9e0e9;
+  border-radius: 13px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.06);
+  min-width: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  border-color: #c9a227;
+  box-shadow: 0 6px 18px rgba(11, 31, 58, 0.09);
+}
+
+.stat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  background: #edf2fa;
+  color: #0b1f3a;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+  background: #e3f4ed;
+  color: #176747;
+}
+
+.stat-card:nth-child(3) .stat-icon {
+  background: #f9e9eb;
+  color: #a81f2d;
+}
+
+.stat-card:nth-child(4) .stat-icon {
+  background: #fbf3dc;
+  color: #856710;
+}
+
+.stat-value {
+  font: 700 30px 'Playfair Display', serif;
+  color: #0b1f3a;
+  margin: 14px 0 6px;
+  line-height: 1.2;
+}
+
+.stat-foot {
+  font-size: 11px;
+  color: #526176;
+  line-height: 1.5;
+}
+
+.muted-dash {
+  color: #526176;
+}
+.grid-main{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(290px,1fr);gap:18px;margin-bottom:22px}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:20px;min-width:0}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}.panel-head h3{font-size:14px;color:var(--navy);margin:0}.panel-head p{font-size:11px;color:var(--muted);margin:5px 0 0}.small-select{border:1px solid var(--line);background:white;border-radius:7px;padding:7px 9px;color:var(--muted);font-size:11px}.chart-placeholder{height:190px;position:relative;display:flex;align-items:flex-end;gap:10px;padding:15px 7px 23px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent 45px,#edf0f4 46px,#edf0f4 47px)}.bar-wrap{height:100%;flex:1;display:flex;align-items:flex-end;justify-content:center;position:relative}.bar{width:min(25px,65%);height:var(--h);border-radius:5px 5px 0 0;background:#c9a227;opacity:.85}.bar:nth-child(odd){background:#0b1f3a}.bar-labels{display:flex;justify-content:space-between;gap:4px;padding:8px 5px 0;color:var(--muted);font-size:9px}.chart-note{font-size:11px;color:var(--muted);margin-top:13px;line-height:1.5}.content-list{display:flex;flex-direction:column;gap:0}.content-row{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid #eef0f3}.content-row:last-child{border-bottom:0}.content-mark{width:35px;height:35px;border-radius:9px;display:grid;place-items:center;background:#f3f5f8;font-size:15px;flex-shrink:0}.content-row strong{display:block;font-size:12px;color:var(--ink)}.content-row small{display:block;font-size:10px;color:var(--muted);margin-top:4px}.row-value{margin-left:auto;color:var(--navy);font-size:12px;font-weight:700;white-space:nowrap}
+.section-title{font:700 20px 'Playfair Display',serif;color:var(--navy);margin:0 0 6px}.section-desc{font-size:12px;color:var(--muted);margin:0 0 22px;line-height:1.6}.shortcut-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.shortcut{border:1px solid var(--line);background:#fff;border-radius:12px;padding:18px;text-align:left;transition:transform .15s,border-color .15s;min-height:145px}.shortcut:hover{transform:translateY(-2px);border-color:#d7c16b;box-shadow:var(--shadow)}.shortcut .shortcut-icon{width:39px;height:39px;border-radius:11px;background:#f7f0db;display:grid;place-items:center;font-size:19px;margin-bottom:14px}.shortcut:nth-child(3n+2) .shortcut-icon{background:#f8e9eb}.shortcut:nth-child(3n) .shortcut-icon{background:#eaf0f8}.shortcut strong{display:block;color:var(--navy);font-size:13px}.shortcut span{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:6px}
+.section-view{display:none}.section-view.active{display:block}.dashboard-view.active{display:block}.section-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}.searchbox{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:white;min-width:220px;font-size:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff}.simple-table{border-collapse:collapse;width:100%;min-width:600px;text-align:left}.simple-table th{font:600 10px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);background:#fafbfc;padding:13px 15px}.simple-table td{font-size:12px;padding:15px;border-top:1px solid #eef0f3;color:var(--ink)}.tag{display:inline-block;background:#f6f0dc;color:#7b6010;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:700}.empty-note{border:1px dashed #d9dee7;border-radius:10px;padding:24px;text-align:center;color:var(--muted);font-size:12px;line-height:1.7;background:#fff}.empty-note strong{display:block;color:var(--navy);font-size:14px;margin-bottom:6px}.settings-list{display:grid;gap:12px}.settings-item{display:flex;align-items:flex-start;gap:12px;background:white;border:1px solid var(--line);border-radius:10px;padding:15px}.settings-item strong{font-size:12px;display:block;margin-bottom:4px}.settings-item p{font-size:11px;color:var(--muted);margin:0;line-height:1.55}.footer-motto{font:italic 14px 'Playfair Display',serif;color:var(--red);margin-top:30px;text-align:center}
+@media(max-width:1150px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-main{grid-template-columns:1fr}.shortcut-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){.sidebar{transform:translateX(-100%);transition:transform .2s;width:260px;box-shadow:15px 0 35px #0002}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.mobile-menu{display:inline-block}.topbar{padding:14px 17px}.topbar h1{font-size:18px}.topbar p{display:none}.content{padding:22px 16px 35px}.welcome{flex-direction:column}.date-pill{display:none}.status{display:none}.shortcut-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.stats{grid-template-columns:1fr 1fr;gap:9px}.stat-card{padding:13px}.stat-value{font-size:24px}.stat-head{font-size:10px}.stat-icon{width:29px;height:29px}.panel{padding:15px}.shortcut-grid{grid-template-columns:1fr}.shortcut{min-height:auto}.login-card{padding:25px 21px}.welcome h2{font-size:24px}}
+
+.content-editor{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px;margin:18px 0 24px}.record-form label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin:0 0 13px}.record-form input,.record-form textarea,.record-form select{display:block;width:100%;margin-top:6px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--ink);background:#fff}.editor-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.editor-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.secondary{border:1px solid var(--line);background:#fff;border-radius:8px;padding:12px 15px}.editor-status{font-size:12px;color:var(--green)}.records-list{display:grid;gap:12px;margin-top:16px}.record-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px;display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.record-card h3{margin:0 0 5px;color:var(--navy);font-size:15px}.record-card p{margin:4px 0;color:var(--muted);font-size:12px;line-height:1.5;overflow-wrap:anywhere}.record-tools{display:flex;gap:7px;flex-wrap:wrap}.record-tools button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:7px 10px;font-size:11px}.record-tools .danger{color:var(--red)}.status-pill{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green)}@media(max-width:700px){.editor-fields{grid-template-columns:1fr}.record-card{display:block}.record-tools{margin-top:12px}}
+</style>
+</head>
+<body>
+<div class="top-stripe"></div>
+
+<section id="loginScreen">
+  <div class="login-wrap">
+    <div class="brand">
+      <div class="logo"><img src="bb.png" alt="Boys' Brigade logo" onerror="this.style.display='none'"></div>
+      <h1>Boys' Brigade Nigeria</h1><p>Anambra State Council</p>
+    </div>
+    <div class="login-card">
+      <h2>Welcome Sir</h2><div class="gold-line"></div>
+      <div id="loginMessage" class="msg" role="alert"></div>
+      <form id="loginForm">
+        <div class="field"><label for="email">Admin Email Address</label><input id="email" type="email" autocomplete="username" placeholder="Enter your email address" required></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required></div>
+        <button class="primary full" id="loginButton" type="submit">Sign In to Admin</button>
+      </form>
+      <div class="login-foot">🔒 Authorised council administrators only</div>
+    </div>
+    <div class="site-footer"><strong>Boys' Brigade Nigeria — Anambra State Council</strong><br>The Vision of our founders shall not die in our hands.</div>
+  </div>
+</section>
+
+<div id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-brand"><div class="small-logo"><img src="bb.png" alt="" onerror="this.style.display='none'"></div><div><strong>Boys' Brigade Nigeria</strong><small>ANAMBRA STATE COUNCIL</small></div></div>
+    <div class="nav-label">Workspace</div>
+    <button class="nav-btn active" data-view="overview"><span class="nav-icon">▦</span>Dashboard Overview</button>
+    <button class="nav-btn" data-view="analytics"><span class="nav-icon">⌁</span>Website Analytics</button>
+    <div class="nav-label">Website content</div>
+    <button class="nav-btn" data-view="announcements"><span class="nav-icon">◉</span>Announcements</button>
+    <button class="nav-btn" data-view="programmes"><span class="nav-icon">▣</span>Programmes & Events</button>
+    <button class="nav-btn" data-view="training"><span class="nav-icon">◇</span>Training Courses</button>
+    <button class="nav-btn" data-view="articles"><span class="nav-icon">▤</span>Articles & News</button>
+    <button class="nav-btn" data-view="recognition"><span class="nav-icon">★</span>Recognition</button>
+    <button class="nav-btn" data-view="homepageStats"><span class="nav-icon">#</span>Homepage Statistics</button>
+    <button class="nav-btn" data-view="library"><span class="nav-icon">▥</span>Public Library</button>
+    <button class="nav-btn" data-view="executive"><span class="nav-icon">♙</span>State Executive</button>
+    <div class="nav-label">Community</div>
+    <button class="nav-btn" data-view="anonymous"><span class="nav-icon">✉</span>Anonymous Box</button>
+    <button class="nav-btn" data-view="quiz"><span class="nav-icon">✓</span>Quizzes & Leadership</button>
+    <div class="nav-label">System</div>
+    <button class="nav-btn" data-view="settings"><span class="nav-icon">⚙</span>Site Settings</button>
+    <div class="side-bottom"><div class="admin-chip"><small>Signed in as</small><span id="sideEmail">Administrator</span></div><button class="signout" id="signOutButton">↪ &nbsp; Sign Out</button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px"><button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button><div><h1 id="pageTitle">Dashboard Overview</h1><p>Anambra State Council · Administration Portal</p></div></div>
+      <div class="top-actions"><span class="status">● Admin verified</span><button class="primary" id="topSignOut" style="padding:9px 12px;font-size:11px">Sign Out</button></div>
+    </header>
+    <div class="content">
+      <section class="section-view dashboard-view active" id="view-overview">
+        <div class="welcome">
+          <div>
+            <div class="eyebrow">Council control centre</div>
+            <h2>Welcome back, Admin.</h2>
+            <p>Manage the Anambra State Council website from one place.</p>
+          </div>
+          <div class="date-pill" id="todayLabel">Website overview</div>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h3>Management shortcuts</h3>
+              <p>Quick access to the main council website areas</p>
+            </div>
+          </div>
+          <div class="shortcut-grid">
+            <button class="shortcut" type="button" data-go="announcements">
+              <div class="shortcut-icon">◉</div>
+              <strong>Announcements</strong>
+              <span>Prepare and manage council updates.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="programmes">
+              <div class="shortcut-icon">▣</div>
+              <strong>Programmes &amp; Events</strong>
+              <span>Manage event information and schedules.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="training">
+              <div class="shortcut-icon">◇</div>
+              <strong>Training Courses</strong>
+              <span>Maintain course information and notices.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="articles">
+              <div class="shortcut-icon">▤</div>
+              <strong>Articles &amp; News</strong>
+              <span>Organise stories and council publications.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="library">
+              <div class="shortcut-icon">▥</div>
+              <strong>Public Library</strong>
+              <span>Maintain public resource links.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="anonymous">
+              <div class="shortcut-icon">✉</div>
+              <strong>Anonymous Box</strong>
+              <span>Open the private submissions workspace.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="quiz">
+              <div class="shortcut-icon">✓</div>
+              <strong>Quizzes &amp; Leadership</strong>
+              <span>Access quizzes and leadership activities.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="analytics">
+              <div class="shortcut-icon">↗</div>
+              <strong>Website Analytics</strong>
+              <span>View reported visitor and page-view figures.</span>
+            </button>
+            <button class="shortcut" type="button" data-go="settings">
+              <div class="shortcut-icon">⚙</div>
+              <strong>Site Settings</strong>
+              <span>Review integrations and admin safeguards.</span>
+            </button>
+          </div>
+        </section>
+        <div class="footer-motto">“The Vision of our founders shall not die in our hands.”</div>
+      </section>
+
+      <section class="section-view" id="view-analytics">
+        <h2 class="section-title">Website Analytics</h2><p class="section-desc">Review audience and content performance for the public council website.</p>
+        <div class="stats">
+          <article class="stat-card">
+            <div class="stat-head">Total users <span class="stat-icon">◉</span></div>
+            <div class="stat-value muted-dash" id="ga-total-users">—</div>
+            <div class="stat-foot">For the selected reporting period</div>
+          </article>
+
+          <article class="stat-card">
+           <div class="stat-head">Sessions <span class="stat-icon">↻</span></div>
+           <div class="stat-value muted-dash" id="ga-sessions">—</div>
+           <div class="stat-foot">For the selected reporting period</div>
+         </article>
+
+         <article class="stat-card">
+           <div class="stat-head">Views <span class="stat-icon">◫</span></div>
+           <div class="stat-value muted-dash" id="ga-page-views">—</div>
+           <div class="stat-foot">For the selected reporting period</div>
+         </article>
+
+         <article class="stat-card">
+           <div class="stat-head">Engagement rate <span class="stat-icon">↗</span></div>
+           <div class="stat-value muted-dash" id="ga-engagement-rate">—</div>
+           <div class="stat-foot">For the selected reporting period</div>
+         </article>
+        </div>
+      </section>
+
+      <section class="section-view" id="view-announcements"><h2 class="section-title">Announcements & Event Calendar</h2><p class="section-desc">Published records appear in the existing public Upcoming Programmes table. Add the event first; its report can be completed later under Programmes & Reports.</p><div class="content-editor"><form class="record-form" data-collection="announcements" data-kind="announcements"><input type="hidden" name="recordId"><div class="editor-fields"><label>Programme title<input name="title" required type="text"></label><label>Event date<input name="date" type="date" required></label><label>Venue / location<input name="location" type="text" required></label><label>Host / organising council<input name="host" type="text"></label></div><label>Public description<textarea name="body" rows="4"></textarea></label><label>Publishing status<select name="status"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select></label><div class="editor-actions"><button class="primary" type="submit">Save announcement</button><button class="secondary" type="button" data-cancel>Clear form</button><span class="editor-status" aria-live="polite"></span></div></form><div class="records-list" id="records-announcements">Loading records…</div></div></section>
+      <section class="section-view" id="view-programmes"><h2 class="section-title">Programme Bookkeeping & Reports</h2><p class="section-desc">Internal records only. Link each report from Google Drive with appropriate restricted sharing. Report links can be opened or downloaded by authorised users with access.</p><div class="content-editor"><form id="programmeReportForm" class="record-form"><input type="hidden" name="recordId"><div class="editor-fields"><label>Programme title<input name="title" required></label><label>Programme date<input name="date" type="date"></label><label>Location<input name="location"></label><label>Attendance (number)<input name="attendance" type="number" min="0" step="1"></label></div><label>Description<textarea name="description" rows="3"></textarea></label><label>Observations<textarea name="observations" rows="4"></textarea></label><label>Report file Google Drive link (Word/PDF, recommended max 4 MB)<input name="reportUrl" type="url" placeholder="https://drive.google.com/..."></label><label>Record status<select name="status"><option value="planned">Planned</option><option value="completed">Completed</option><option value="archived">Archived</option></select></label><div class="editor-actions"><button class="primary" type="submit">Save programme record</button><button class="secondary" type="button" id="programmeReportClear">Clear form</button><span class="editor-status" id="programmeReportStatus" aria-live="polite"></span></div></form><div class="records-list" id="programme-report-records">Loading records…</div></div></section>
+      <section class="section-view" id="view-training"><h2 class="section-title">Training & Officer Records</h2><p class="section-desc">Private administrative records. Attendance fields store numbers only; upload the detailed register or report to Drive and link it here.</p><div class="content-editor"><form id="trainingRecordForm" class="record-form"><input type="hidden" name="recordId"><div class="editor-fields"><label>Training title<input name="title" required></label><label>Date<input name="date" type="date"></label><label>Location<input name="location"></label><label>Description<textarea name="description" rows="2"></textarea></label><label>NCO Basic I attendance<input name="ncoBasic1" type="number" min="0" step="1" value="0"></label><label>NCO Basic II attendance<input name="ncoBasic2" type="number" min="0" step="1" value="0"></label><label>NCO Basic III attendance<input name="ncoBasic3" type="number" min="0" step="1" value="0"></label><label>Officers Basic I attendance<input name="officersBasic1" type="number" min="0" step="1" value="0"></label><label>Officers Basic II attendance<input name="officersBasic2" type="number" min="0" step="1" value="0"></label><label>Officers Basic III attendance<input name="officersBasic3" type="number" min="0" step="1" value="0"></label><label>Officers Basic IV attendance<input name="officersBasic4" type="number" min="0" step="1" value="0"></label><label>Training report / register Drive link<input name="reportUrl" type="url"></label></div><label>Record status<select name="status"><option value="draft">Draft</option><option value="completed">Completed</option><option value="archived">Archived</option></select></label><div class="editor-actions"><button class="primary" type="submit">Save training record</button><button class="secondary" type="button" id="trainingRecordClear">Clear form</button><span class="editor-status" id="trainingRecordStatus" aria-live="polite"></span></div></form><h3 style="margin-top:28px">Officer Registers</h3><p class="section-desc">Use one register per officer group. Keep any linked files restricted in Google Drive.</p><form id="officerRegisterForm" class="record-form"><input type="hidden" name="recordId"><div class="editor-fields"><label>Register group<select name="group" required><option value="State Officers">State Officers</option><option value="Brigade School Officers">Brigade School Officers</option><option value="National Training Officers">National Training Officers</option><option value="Advanced National Training Officers">Advanced National Training Officers</option></select></label><label>Register document Google Drive link<input name="fileUrl" type="url" placeholder="Paste the Google Drive link" required></label></div><p class="section-desc">Upload the group's register to Google Drive, then paste its link here. Keep the file restricted to authorised officers.</p><div class="editor-actions"><button class="primary" type="submit">Save register</button><button class="secondary" type="button" id="officerRegisterClear">Clear form</button><span class="editor-status" id="officerRegisterStatus" aria-live="polite"></span></div></form><div class="records-list" id="training-records">Loading records…</div><div class="records-list" id="officer-registers">Loading officer records…</div></div></section>
+      <section class="section-view" id="view-articles"><h2 class="section-title">Articles & News</h2><p class="section-desc">Create, edit, publish or archive records. Only published records appear on the public website.</p><div class="content-editor"><form class="record-form" data-collection="articles" data-kind="articles"><input type="hidden" name="recordId"><div class="editor-fields"><label>Title<input name="title" type="text" required /></label><label>Author / byline<input name="author" type="text" /></label><label>Publication date<input name="publishedAt" type="date" /></label><label>Cover image URL (Google Drive direct/public image link)<input name="coverImageUrl" type="url" placeholder="https://..." /></label><label>Excerpt<textarea name="excerpt" rows="3"></textarea></label><label>Full article body<textarea name="body" rows="8"></textarea></label><label>Optional attached document URL<input name="driveUrl" type="url" /></label></div><label>Publishing status<select name="status"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select></label><div class="editor-actions"><button class="primary" type="submit">Save record</button><button class="secondary" type="button" data-cancel>Clear form</button><span class="editor-status" aria-live="polite"></span></div></form><div class="records-list" id="records-articles">Loading records…</div></div></section>
+      <section class="section-view" id="view-library"><h2 class="section-title">Public Library</h2><p class="section-desc">Create, edit, publish or archive records. Only published records appear on the public website.</p><div class="content-editor"><form class="record-form" data-collection="libraryResources" data-kind="library"><input type="hidden" name="recordId"><div class="editor-fields"><label>Title<input name="title" type="text" /></label><label>Description<textarea name="description" rows="3"></textarea></label><label>Category<input name="category" type="text" /></label><label>Google drive share url<input name="driveUrl" type="text" /></label></div><label>Publishing status<select name="status"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select></label><div class="editor-actions"><button class="primary" type="submit">Save record</button><button class="secondary" type="button" data-cancel>Clear form</button><span class="editor-status" aria-live="polite"></span></div></form><div class="records-list" id="records-library">Loading records…</div></div></section>
+      <section class="section-view" id="view-executive">
+        <h2 class="section-title">Manage State Executive</h2>
+        <p class="section-desc">Add and update the public State Executive profiles. Passport photographs must be JPG, PNG or WebP and no larger than 1 MB.</p>
+        <div class="content-editor">
+          <form id="executiveForm" class="record-form">
+            <input type="hidden" name="recordId">
+            <input type="hidden" name="existingPhotoUrl">
+            <div class="editor-fields">
+              <label>Name (rank/title inclusive)<input name="name" required maxlength="160" placeholder="e.g. Capt. John Doe"></label>
+              <label>Position<input name="position" required maxlength="120" placeholder="e.g. State President"></label>
+              <label>Battalion<input name="battalion" maxlength="120" placeholder="Battalion name"></label>
+              <label>Company<input name="company" maxlength="120" placeholder="Company name"></label>
+              <label>Phone number<input name="phone" type="tel" maxlength="40" placeholder="Public contact number"></label>
+              <label>Passport photograph (maximum 1 MB)<input name="photo" id="executivePhoto" type="file" accept="image/jpeg,image/png,image/webp"><small class="field-hint">Choose JPG, PNG or WebP. Maximum original file size: 1 MB.</small></label>
+            </div>
+            <div id="executivePhotoPreview" style="display:none;margin:14px 0"><img alt="Passport preview" style="width:100px;height:120px;object-fit:cover;border-radius:8px;border:1px solid #ddd"><p class="section-desc">Photo preview</p></div>
+            <label>Publishing status<select name="status"><option value="published">Published</option><option value="draft">Draft</option></select></label>
+            <div class="editor-actions"><button class="primary" id="executiveSave" type="submit">Save executive</button><button class="secondary" type="button" id="executiveClear">Clear form</button><span class="editor-status" id="executiveStatus" aria-live="polite"></span></div>
+          </form>
+          <div class="records-list" id="executive-records">Executive records will appear here after loading.</div>
+        </div>
+      </section>
+      <section class="section-view" id="view-anonymous"><h2 class="section-title">Anonymous Box</h2><p class="section-desc">Private inbox. Only authenticated administrators can read these messages.</p><div class="records-list" id="anonymous-inbox">Loading messages…</div></section>
+      <section class="section-view" id="view-quiz"><h2 class="section-title">Quiz Builder & Results</h2><p class="section-desc">Create timed quizzes for participants who enter their name and company/battalion. One attempt is enforced on a best-effort basis. Because this free-tier version scores in the browser, a technically capable participant may inspect the answer key; do not use it for high-stakes examinations or prizes.</p><div class="content-editor"><form id="quizForm" class="record-form"><input type="hidden" name="recordId"><div class="editor-fields"><label>Quiz title<input name="title" required></label><label>Duration (minutes)<input name="durationMinutes" type="number" min="1" max="180" value="10" required></label><label>Instructions<textarea name="instructions" rows="2"></textarea></label><label>Quiz status<select name="status"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select></label></div><p><strong>Questions</strong> — add each question as one line in this format: <code>Question text | Option A | Option B | Option C | Option D | Correct option number (1–4)</code></p><label>Questions<textarea name="questionsText" rows="8" required placeholder="What year was The Boys' Brigade founded? | 1883 | 1890 | 1908 | 1920 | 1"></textarea></label><div class="editor-actions"><button class="primary" type="submit">Save quiz</button><button class="secondary" type="button" id="quizClear">Clear form</button><span class="editor-status" id="quizStatus"></span></div></form><div class="records-list" id="quiz-records">Loading quizzes…</div><h3 style="margin-top:28px">Quiz submissions</h3><div class="records-list" id="quiz-submissions">Loading results…</div></div></section>
+      <section class="section-view" id="view-homepageStats"><h2 class="section-title">Homepage Statistics</h2><p class="section-desc">Update the four figures shown in the public homepage hero. The existing section cards remain unchanged.</p><div class="content-editor"><form id="homepageStatsForm" class="record-form"><div class="editor-fields"><label>Companies in Council<input name="companies" type="text" value="500+" required></label><label>Registered Officers<input name="officers" type="text" value="150+" required></label><label>Trained Officers<input name="trained" type="text" value="70+" required></label><label>Battalion/Group Councils Inaugurated<input name="councils" type="text" value="12" required></label></div><div class="editor-actions"><button class="primary" type="submit">Save homepage statistics</button><span id="homepageStatsStatus" class="editor-status" aria-live="polite"></span></div></form></div></section>
+      <section class="section-view" id="view-recognition"><h2 class="section-title">Recognition</h2><p class="section-desc">Publish honours, appointments and achievements. Published records appear in the public Recognition section and can be shared.</p><div class="content-editor"><form class="record-form" data-collection="recognition" data-kind="recognition"><input type="hidden" name="recordId"><div class="editor-fields"><label>Recognition title<input name="title" required></label><label>Person recognised<input name="name" required></label><label>Date<input name="date" type="date"></label><label>Photograph URL (optional)<input name="imageUrl" type="url" placeholder="Public Google Drive image URL"></label></div><label>Description<textarea name="description" rows="4"></textarea></label><label>Status<select name="status"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select></label><div class="editor-actions"><button class="primary" type="submit">Save recognition</button><button class="secondary" type="button" data-cancel>Clear form</button><span class="editor-status" aria-live="polite"></span></div></form><div class="records-list" id="records-recognition">Loading records…</div></div></section>
+      <section class="section-view" id="view-settings"><h2 class="section-title">Site Settings</h2><p class="section-desc">Review core integrations and administrative safeguards.</p><div class="settings-list">
+        <div class="settings-item"><span>✓</span><div><strong>Firebase Authentication</strong><p>Existing email/password sign-in retained. Admin access is checked against the admin/{uid} document.</p></div></div>
+        <div class="settings-item"><span>✓</span><div><strong>Firestore admin-role check</strong><p>The current login flow verifies role == "admin" before showing the dashboard.</p></div></div>
+        <div class="settings-item"><span>✓</span><div><strong>Google Analytics property</strong><p>Measurement ID: G-4GQFDMSVQD. Realtime activity was visible during setup.</p></div></div>
+        <div class="settings-item"><span>!</span><div><strong>Public content writes</strong><p>Firestore rules must be expanded carefully for each feature. Do not loosen the rules globally to make forms work.</p></div></div>
+        <div class="settings-item"><span>!</span><div><strong>Hosting</strong><p>This page is currently intended for local development. Use HTTPS on the published site and keep your public website files in the intended project folder.</p></div></div>
+      </div></section>
+    </div>
+  </main>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, collection, addDoc, updateDoc, setDoc, deleteDoc, getDocs, query, orderBy, serverTimestamp, where } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js";
+
+const firebaseConfig = {
+      apiKey: "AIzaSyCQhmSeTZ0XOjmjpNXOKtvCXFc7sUKt85w",
+      authDomain: "bbn-anambra-state-council.firebaseapp.com",
+      projectId: "bbn-anambra-state-council",
+      storageBucket: "bbn-anambra-state-council.firebasestorage.app",
+      messagingSenderId: "437804623632",
+      appId: "1:437804623632:web:8264651e31cf8a3fb9a795"
+    };
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+const loginScreen = document.getElementById("loginScreen");
+const appShell = document.getElementById("app");
+const loginForm = document.getElementById("loginForm");
+const loginButton = document.getElementById("loginButton");
+const loginMessage = document.getElementById("loginMessage");
+const passwordInput = document.getElementById("password");
+const sidebar = document.getElementById("sidebar");
+let checkingAccount = false;
+
+function showLoginMessage(text) {
+  loginMessage.textContent = text;
+  loginMessage.className = "msg error";
+}
+function clearLoginMessage() {
+  loginMessage.textContent = "";
+  loginMessage.className = "msg";
+}
+function showLogin() {
+  loginScreen.style.display = "flex";
+  appShell.style.display = "none";
+}
+function showApp(user) {
+  loginScreen.style.display = "none";
+  appShell.style.display = "block";
+  document.getElementById("sideEmail").textContent = user.email || "Verified administrator";
+}
+async function verifyAdmin(user) {
+  const snapshot = await getDoc(doc(db, "admin", user.uid));
+  if (!snapshot.exists() || snapshot.data().role !== "admin") {
+    await signOut(auth);
+    throw new Error("This account does not have administrator access.");
+  }
+}
+function friendlyError(error) {
+  const code = error?.code || "";
+  if (code.includes("invalid-credential") || code.includes("wrong-password") || code.includes("user-not-found")) return "The email address or password is incorrect.";
+  if (code.includes("invalid-email")) return "Please enter a valid email address.";
+  if (code.includes("too-many-requests")) return "Too many attempts. Please wait and try again later.";
+  if (code.includes("network-request-failed")) return "Network error. Check your internet connection.";
+  if (code.includes("permission-denied")) return "The account signed in, but Firestore could not verify admin access. Check the admin document and rules.";
+  return "Unable to sign in. Please try again. (" + (code || "unknown error") + ")";
+}
+loginForm.addEventListener("submit", async (event) => {
+  event.preventDefault(); clearLoginMessage();
+  const email = document.getElementById("email").value.trim();
+  const password = passwordInput.value;
+  loginButton.disabled = true; loginButton.textContent = "Verifying account..."; checkingAccount = true;
+  try {
+    const credential = await signInWithEmailAndPassword(auth, email, password);
+    await verifyAdmin(credential.user);
+    showApp(credential.user);
+  } catch (error) {
+    console.error("Firebase login error:", error.code, error.message);
+    showLogin();
+    showLoginMessage(error.message === "This account does not have administrator access." ? error.message : friendlyError(error));
+  } finally {
+    checkingAccount = false; loginButton.disabled = false; loginButton.textContent = "Sign In to Admin";
+  }
+});
+async function doSignOut() {
+  try { await signOut(auth); showLogin(); loginForm.reset(); clearLoginMessage(); }
+  catch (error) { console.error("Sign-out error", error); alert("Unable to sign out. Please try again."); }
+}
+document.getElementById("signOutButton").addEventListener("click", doSignOut);
+document.getElementById("topSignOut").addEventListener("click", doSignOut);
+onAuthStateChanged(auth, async (user) => {
+  if (checkingAccount) return;
+  if (!user) { showLogin(); return; }
+  try { await verifyAdmin(user); showApp(user); }
+  catch (error) {
+    console.error("Admin verification error:", error);
+    showLogin();
+    if (error.message === "This account does not have administrator access.") showLoginMessage(error.message);
+    else showLoginMessage("Could not verify administrator access. Please sign in again.");
+  }
+});
+const viewNames = {
+  overview:"Dashboard Overview", analytics:"Website Analytics", announcements:"Announcements",
+  programmes:"Programmes & Events", training:"Training Courses", articles:"Articles & News",
+  library:"Public Library", recognition:"Recognition", homepageStats:"Homepage Statistics", executive:"State Executive", anonymous:"Anonymous Box", quiz:"Quizzes & Leadership", settings:"Site Settings"
+};
+function openView(name) {
+  if (!viewNames[name]) return;
+  document.querySelectorAll(".section-view").forEach(section => section.classList.remove("active"));
+  const target = document.getElementById("view-" + name);
+  if (target) target.classList.add("active");
+  if (name === "executive") loadExecutiveRecords();
+  document.querySelectorAll(".nav-btn").forEach(button => button.classList.toggle("active", button.dataset.view === name));
+  document.getElementById("pageTitle").textContent = viewNames[name];
+  sidebar.classList.remove("open");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".nav-btn").forEach(button => button.addEventListener("click", () => openView(button.dataset.view)));
+document.querySelectorAll("[data-go]").forEach(button => button.addEventListener("click", () => openView(button.dataset.go)));
+document.getElementById("mobileMenu").addEventListener("click", () => sidebar.classList.toggle("open"));
+document.getElementById("todayLabel").textContent = new Intl.DateTimeFormat(undefined,{weekday:"short",year:"numeric",month:"short",day:"numeric"}).format(new Date());
+
+function escapeHtml(value=""){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+// State Executive management
+const executiveForm = document.getElementById("executiveForm");
+const executiveList = document.getElementById("executive-records");
+const executiveStatus = document.getElementById("executiveStatus");
+const executiveSave = document.getElementById("executiveSave");
+const executivePhoto = document.getElementById("executivePhoto");
+let editingExecutiveId = null;
+let executiveRecords = [];
+function executiveMessage(message, error=false) { executiveStatus.textContent=message; executiveStatus.style.color=error ? "#a81f2d" : "#287348"; }
+function clearExecutiveForm() {
+  executiveForm.reset(); editingExecutiveId=null;
+  executiveForm.elements.recordId.value=""; executiveForm.elements.existingPhotoUrl.value="";
+  executiveSave.textContent="Save executive";
+  document.getElementById("executivePhotoPreview").style.display="none";
+  executiveMessage("");
+}
+executivePhoto.addEventListener("change",()=>{
+  const file=executivePhoto.files?.[0];
+  if(!file){document.getElementById("executivePhotoPreview").style.display="none";return;}
+  if(!["image/jpeg","image/png","image/webp"].includes(file.type) || file.size>1024*1024){
+    executivePhoto.value=""; document.getElementById("executivePhotoPreview").style.display="none";
+    executiveMessage("Choose a JPG, PNG or WebP image no larger than 1 MB.",true); return;
+  }
+  const preview=document.getElementById("executivePhotoPreview"); preview.querySelector("img").src=URL.createObjectURL(file); preview.style.display="block";
+});
+function renderExecutiveRecords(){
+  if(!executiveRecords.length){executiveList.innerHTML='<p class="section-desc">No executive records yet. Add the first officer using the form above.</p>';return;}
+  executiveList.innerHTML=executiveRecords.map(r=>`<article class="record-item" style="display:flex;gap:14px;align-items:flex-start"><div>${r.photoUrl?`<img src="${escapeHtml(r.photoUrl)}" alt="" style="width:64px;height:78px;object-fit:cover;border-radius:6px">`:''}</div><div style="flex:1;min-width:0"><strong>${escapeHtml(r.name||'')}</strong><p>${escapeHtml(r.position||'')}${r.battalion?' · '+escapeHtml(r.battalion):''}${r.company?' · '+escapeHtml(r.company):''}</p>${r.phone?`<p>${escapeHtml(r.phone)}</p>`:''}<small>${escapeHtml(r.status||'published')}</small><div class="editor-actions"><button class="secondary" type="button" data-exec-edit="${r.id}">Edit</button><button class="secondary" type="button" data-exec-delete="${r.id}">Delete</button></div></div></article>`).join('');
+  executiveList.querySelectorAll('[data-exec-edit]').forEach(b=>b.addEventListener('click',()=>{
+    const r=executiveRecords.find(x=>x.id===b.dataset.execEdit);if(!r)return;editingExecutiveId=r.id;
+    for(const k of ['name','position','battalion','company','phone','status']) executiveForm.elements[k].value=r[k]|| (k==='status'?'published':'');
+    executiveForm.elements.recordId.value=r.id;executiveForm.elements.existingPhotoUrl.value=r.photoUrl||'';executiveSave.textContent='Update executive';
+    if(r.photoUrl){const p=document.getElementById('executivePhotoPreview');p.querySelector('img').src=r.photoUrl;p.style.display='block';}
+    executiveMessage('Editing '+r.name);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }));
+  executiveList.querySelectorAll('[data-exec-delete]').forEach(b=>b.addEventListener('click',async()=>{
+    const r=executiveRecords.find(x=>x.id===b.dataset.execDelete);if(!r||!confirm('Delete '+r.name+' from the State Executive?'))return;
+    try{await deleteDoc(doc(db,'executive',r.id));if(r.photoPath){try{await deleteObject(storageRef(storage,r.photoPath));}catch(e){console.warn('Photo cleanup failed',e);}}await loadExecutiveRecords();executiveMessage('Executive record deleted.');}
+    catch(e){console.error(e);executiveMessage('Could not delete record. Check Firestore rules.',true);}
+  }));
+}
+async function loadExecutiveRecords(){
+  executiveList.textContent='Loading executive records…';
+  try{const snap=await getDocs(collection(db,'executive'));executiveRecords=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>String(a.position||'').localeCompare(String(b.position||'')));renderExecutiveRecords();}
+  catch(e){console.error(e);executiveList.innerHTML='<p class="section-desc">Could not load records. Confirm the executive Firestore rules and admin access.</p>';}
+}
+executiveForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=executiveForm.elements, file=executivePhoto.files?.[0];
+  if(file && (!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>1024*1024)){executiveMessage('Photo must be JPG, PNG or WebP and no larger than 1 MB.',true);return;}
+  const payload={name:f.name.value.trim(),position:f.position.value.trim(),battalion:f.battalion.value.trim(),company:f.company.value.trim(),phone:f.phone.value.trim(),status:f.status.value,updatedAt:serverTimestamp()};
+  if(!payload.name||!payload.position){executiveMessage('Name and position are required.',true);return;}
+  executiveSave.disabled=true;executiveSave.textContent='Saving…';
+  try{
+    if(file){const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const path=`executive/${Date.now()}-${safeName}`;await uploadBytes(storageRef(storage,path),file,{contentType:file.type});payload.photoUrl=await getDownloadURL(storageRef(storage,path));payload.photoPath=path;}
+    else if(f.existingPhotoUrl.value){payload.photoUrl=f.existingPhotoUrl.value;const old=executiveRecords.find(r=>r.id===editingExecutiveId);if(old?.photoPath)payload.photoPath=old.photoPath;}
+    if(editingExecutiveId)await updateDoc(doc(db,'executive',editingExecutiveId),payload);else{payload.createdAt=serverTimestamp();await addDoc(collection(db,'executive'),payload);}
+    clearExecutiveForm();await loadExecutiveRecords();executiveMessage('Executive record saved.');
+  }catch(err){console.error('Executive save failed',err);executiveMessage('Could not save. Check Firestore rules and Firebase Storage rules.',true);}
+  finally{executiveSave.disabled=false;executiveSave.textContent=editingExecutiveId?'Update executive':'Save executive';}
+});
+document.getElementById('executiveClear').addEventListener('click',clearExecutiveForm);
+
+async function loadAnalytics() {
+  try {
+    const response = await fetch("http://localhost:3001/api/analytics");
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      throw new Error(data.error || "Analytics request failed");
+    }
+
+    document.getElementById("ga-total-users").textContent =
+      Number(data.summary.totalUsers).toLocaleString();
+
+    document.getElementById("ga-sessions").textContent =
+      Number(data.summary.sessions).toLocaleString();
+
+    document.getElementById("ga-page-views").textContent =
+      Number(data.summary.pageViews).toLocaleString();
+
+    document.getElementById("ga-engagement-rate").textContent =
+      (Number(data.summary.engagementRate) * 100).toFixed(1) + "%";
+
+  } catch (error) {
+    console.error("Could not load Google Analytics:", error);
+  }
+}
+
+loadAnalytics();
+
+const escHtml=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dateText=v=>v?.toDate?v.toDate().toLocaleDateString():String(v||'');
+const loadCollection=async(name)=>{const snap=await getDocs(collection(db,name));return snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.updatedAt?.seconds||b.createdAt?.seconds||0)-(a.updatedAt?.seconds||a.createdAt?.seconds||0));};
+const renderRows=(host,rows,kind)=>{if(!host)return;if(!rows.length){host.innerHTML='<p class="empty-note">No records yet.</p>';return;}host.innerHTML=rows.map(r=>`<article class="record-card"><div><h3>${escHtml(r.title||r.name||r.group||r.type||'Record')}</h3><p>${escHtml(r.description||r.body||r.excerpt||r.message||r.role||'')}</p><p>${escHtml([r.date,r.location,r.group,r.status].filter(Boolean).join(' · '))}</p>${r.reportUrl?`<p><a href="${escHtml(r.reportUrl)}" target="_blank" rel="noopener noreferrer">Open / download report ↗</a></p>`:''}${r.fileUrl?`<p><a href="${escHtml(r.fileUrl)}" target="_blank" rel="noopener noreferrer">Open / download file ↗</a></p>`:''}<span class="status-pill">${escHtml(r.status||'record')}</span></div><div class="record-tools"><button type="button" data-record-edit="${r.id}" data-record-kind="${kind}">Edit</button><button type="button" class="danger" data-record-delete="${r.id}" data-record-kind="${kind}">Delete</button></div></article>`).join('');};
+async function loadGeneric(kind,col){try{renderRows(document.getElementById('records-'+kind),await loadCollection(col),kind);}catch(e){console.error(e);const el=document.getElementById('records-'+kind);if(el)el.textContent='Could not load records. Check Firestore rules.';}}
+const genericForms=[...document.querySelectorAll('.record-form[data-collection]')];
+for(const form of genericForms){const col=form.dataset.collection,kind=form.dataset.kind;const fields=col==='announcements'?['title','body','date','location','host','status']:col==='articles'?['title','author','publishedAt','coverImageUrl','excerpt','body','driveUrl','status']:col==='libraryResources'?['title','description','category','driveUrl','status']:col==='recognition'?['title','name','date','imageUrl','description','status']:[];loadGeneric(kind,col);form.addEventListener('submit',async e=>{e.preventDefault();const status=form.querySelector('.editor-status');const data={};for(const key of fields){const el=form.elements.namedItem(key);if(el)data[key]=el.value.trim();}if(!data.title){status.textContent='Please enter a title.';return;}if(col==='libraryResources'&&data.driveUrl&&!/^https:\/\//i.test(data.driveUrl)){status.textContent='Enter a full HTTPS Google Drive link.';return;}const id=form.elements.namedItem('recordId').value;status.textContent='Saving…';try{if(id)await updateDoc(doc(db,col,id),{...data,updatedAt:serverTimestamp()});else await addDoc(collection(db,col),{...data,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});form.reset();form.elements.namedItem('recordId').value='';status.textContent='Saved.';await loadGeneric(kind,col);}catch(err){console.error(err);status.textContent='Save failed. Check Firestore rules.';}});form.querySelector('[data-cancel]')?.addEventListener('click',()=>{form.reset();form.elements.namedItem('recordId').value='';form.querySelector('.editor-status').textContent='';});}
+async function saveSimple(form,col,statusId,hostId,kind,fields){const status=document.getElementById(statusId);const data={};for(const f of fields){const el=form.elements.namedItem(f);if(el)data[f]=['attendance','ncoBasic1','ncoBasic2','ncoBasic3','officersBasic1','officersBasic2','officersBasic3','officersBasic4','durationMinutes'].includes(f)?Number(el.value||0):el.value.trim();}if(!data.title&&col!=='officerRegisters'){status.textContent='Title is required.';return;}const id=form.elements.namedItem('recordId')?.value;status.textContent='Saving…';try{if(id)await updateDoc(doc(db,col,id),{...data,updatedAt:serverTimestamp()});else await addDoc(collection(db,col),{...data,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});form.reset();if(form.elements.namedItem('recordId'))form.elements.namedItem('recordId').value='';status.textContent='Saved.';await loadPrivateRecords();}catch(e){console.error(e);status.textContent='Save failed. Verify Firestore rules.';}}
+async function loadPrivateRecords(){try{renderRows(document.getElementById('programme-report-records'),await loadCollection('programmeReports'),'programmeReports');renderRows(document.getElementById('training-records'),await loadCollection('training'),'training');renderRows(document.getElementById('officer-registers'),await loadCollection('officerRegisters'),'officerRegisters');renderRows(document.getElementById('quiz-records'),await loadCollection('quizzes'),'quizzes');renderRows(document.getElementById('quiz-submissions'),await loadCollection('quizSubmissions'),'quizSubmissions');}catch(e){console.error(e);}}
+const prForm=document.getElementById('programmeReportForm');if(prForm)prForm.addEventListener('submit',e=>{e.preventDefault();saveSimple(prForm,'programmeReports','programmeReportStatus','programme-report-records','programmeReports',['title','date','location','attendance','description','observations','reportUrl','status']);});document.getElementById('programmeReportClear')?.addEventListener('click',()=>{prForm.reset();prForm.elements.namedItem('recordId').value='';});
+const trForm=document.getElementById('trainingRecordForm');if(trForm)trForm.addEventListener('submit',e=>{e.preventDefault();saveSimple(trForm,'training','trainingRecordStatus','training-records','training',['title','date','location','description','ncoBasic1','ncoBasic2','ncoBasic3','officersBasic1','officersBasic2','officersBasic3','officersBasic4','reportUrl','status']);});document.getElementById('trainingRecordClear')?.addEventListener('click',()=>{trForm.reset();trForm.elements.namedItem('recordId').value='';});
+const officerForm=document.getElementById('officerRegisterForm');if(officerForm)officerForm.addEventListener('submit',e=>{e.preventDefault();saveSimple(officerForm,'officerRegisters','officerRegisterStatus','officer-registers','officerRegisters',['group','fileUrl']);});
+function parseQuizLines(text){return text.split(/\n/).map(x=>x.trim()).filter(Boolean).map((line,i)=>{const p=line.split('|').map(x=>x.trim());if(p.length!==6||!p[0]||p.slice(1,5).some(x=>!x)||!['1','2','3','4'].includes(p[5]))throw new Error('Question line '+(i+1)+' must contain a question, four options and correct option number 1–4 separated by |.');return {question:p[0],options:p.slice(1,5),correctIndex:Number(p[5])-1};});}
+const quizForm=document.getElementById('quizForm');if(quizForm)quizForm.addEventListener('submit',async e=>{e.preventDefault();const st=document.getElementById('quizStatus');try{const questions=parseQuizLines(quizForm.elements.namedItem('questionsText').value);if(!questions.length)throw new Error('Add at least one question.');const data={title:quizForm.elements.namedItem('title').value.trim(),durationMinutes:Number(quizForm.elements.namedItem('durationMinutes').value),instructions:quizForm.elements.namedItem('instructions').value.trim(),status:quizForm.elements.namedItem('status').value,questions,updatedAt:serverTimestamp()};const id=quizForm.elements.namedItem('recordId').value;if(id)await updateDoc(doc(db,'quizzes',id),data);else await addDoc(collection(db,'quizzes'),{...data,createdAt:serverTimestamp()});st.textContent='Quiz saved. Publish it to make the quiz link available.';quizForm.reset();await loadPrivateRecords();}catch(err){st.textContent=err.message||'Quiz save failed.';}});document.getElementById('quizClear')?.addEventListener('click',()=>quizForm.reset());
+async function loadAnonymousInbox(){const host=document.getElementById('anonymous-inbox');if(!host)return;try{const rows=await loadCollection('anonymousMessages');if(!rows.length){host.textContent='No messages received yet.';return;}host.innerHTML=rows.map(r=>`<article class="record-card"><div><h3>${escHtml(r.type||'Message')} · ${escHtml(r.company||'No company supplied')}</h3><p>${escHtml(r.message||'')}</p>${r.contact?`<p>Optional contact: ${escHtml(r.contact)}</p>`:''}<span class="status-pill">${escHtml(r.status||'new')}</span></div><div class="record-tools"><button type="button" data-record-delete="${r.id}" data-record-kind="anonymousMessages">Delete</button></div></article>`).join('');}catch(e){console.error(e);host.textContent='Could not load inbox. Confirm admin role and Firestore rules.';}}
+document.querySelector('[data-view="anonymous"]')?.addEventListener('click',loadAnonymousInbox);
+document.getElementById('officerRegisterClear')?.addEventListener('click',()=>{officerForm.reset();officerForm.elements.namedItem('recordId').value='';document.getElementById('officerRegisterStatus').textContent='';});
+document.addEventListener('click',async e=>{const edit=e.target.closest('[data-record-edit]');if(edit){const kind=edit.dataset.recordKind;const map={announcements:['announcements','announcements'],articles:['articles','articles'],recognition:['recognition','recognition'],library:['libraryResources','library'],programmeReports:['programmeReports','programmeReportForm'],training:['training','trainingRecordForm'],officerRegisters:['officerRegisters','officerRegisterForm'],quizzes:['quizzes','quizForm']};const pair=map[kind];if(pair){try{const snap=await getDocs(collection(db,pair[0]));const d=snap.docs.find(x=>x.id===edit.dataset.recordEdit);if(!d)return;const data=d.data();let form;if(['programmeReports','training','officerRegisters','quizzes'].includes(kind))form=document.getElementById(pair[1]);else form=document.querySelector(`.record-form[data-kind="${pair[1]}"]`);if(!form)return;form.elements.namedItem('recordId').value=d.id;for(const [k,v] of Object.entries(data)){const el=form.elements.namedItem(k);if(!el)continue;if(k==='questions'&&Array.isArray(v)){el.value=v.map(q=>[q.question,...q.options,String(Number(q.correctIndex)+1)].join(' | ')).join('\n');}else if(typeof v==='string'||typeof v==='number')el.value=String(v);}form.scrollIntoView({behavior:'smooth',block:'center'});}catch(err){console.error(err);alert('Could not load this record for editing.');}}return;}const del=e.target.closest('[data-record-delete]');if(del){if(!confirm('Delete this record permanently?'))return;try{const kind=del.dataset.recordKind;const colMap={library:'libraryResources',announcements:'announcements',articles:'articles',recognition:'recognition',anonymousMessages:'anonymousMessages',programmeReports:'programmeReports',training:'training',officerRegisters:'officerRegisters',quizzes:'quizzes',quizSubmissions:'quizSubmissions'};const col=colMap[kind]||kind;await deleteDoc(doc(db,col,del.dataset.recordDelete));if(col==='anonymousMessages')await loadAnonymousInbox();else if(['programmeReports','training','officerRegisters','quizzes','quizSubmissions'].includes(col))await loadPrivateRecords();else await loadGeneric(kind,col); }catch(err){console.error(err);alert('Delete failed. Check Firestore rules.');}}});
+loadPrivateRecords();
+const homepageStatsForm=document.getElementById('homepageStatsForm');
+if(homepageStatsForm){
+  (async()=>{try{const snap=await getDoc(doc(db,'siteSettings','publicStats'));if(snap.exists()){const d=snap.data();for(const k of ['companies','officers','trained','councils'])if(d[k]!==undefined)homepageStatsForm.elements.namedItem(k).value=String(d[k]);}}catch(e){console.warn('Could not load homepage statistics',e);}})();
+  homepageStatsForm.addEventListener('submit',async e=>{e.preventDefault();const st=document.getElementById('homepageStatsStatus');st.textContent='Saving…';try{const data={};for(const k of ['companies','officers','trained','councils'])data[k]=homepageStatsForm.elements.namedItem(k).value.trim();await setDoc(doc(db,'siteSettings','publicStats'),{...data,updatedAt:serverTimestamp()},{merge:true});st.textContent='Saved. Public figures will update when the homepage reloads.';}catch(err){if(err.code==='not-found'){st.textContent='Statistics record missing; contact admin to initialise it.';}else{console.error(err);st.textContent='Save failed. Check Firestore rules and siteSettings access.';}}});
+}
+
+</script>
+</body>
+</html>
